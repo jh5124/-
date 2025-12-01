@@ -18,11 +18,11 @@ const posts = [
     },
     {
         id: 3,
-        category: "미정",
-        title: "미정",
-        desc: "미정",
-        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-        link: "mexico.html" // 이동할 페이지
+        category: "태국 (Thailand)",
+        title: "매콤달콤 향신료 가득, 태국 음식",
+        desc: "팟타이, 똠얌꿍, 그린 커리까지. 태국의 대표 길거리 음식 3가지를 만나보세요.",
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=60",
+        link: "thailand.html" // 이동할 페이지
     }
 ];
 
