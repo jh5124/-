@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나라별 요리 - Global Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">🌏 나라별 요리</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">홈</a></li>
+                    <li><a href="italy.html">이탈리아 요리</a></li>
+                    <li><a href="korea.html">한국 요리</a></li>
+                    <li><a href="mexico.html">미정 요리</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>오늘 저녁, 세계 여행 어떠세요?</h2>
+            <p>팀원들이 직접 소개하는 나라별 최고의 레시피와 맛집 탐방</p>
+            <button onclick="scrollToContent()">요리 구경하기</button>
+        </div>
+    </section>
+
+    <div class="container content-wrapper">
+        <aside class="sidebar">
+            <div class="profile-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
+                <h3>Global Bites</h3>
+                <p>4조 Team Project</p>
+                <ul class="profile-info">
+                    <li>▪ 팀원: 박찬빈, 송준호, 전영원</li>
+                    <li>▪ 주제: 세계 요리 탐방</li>
+                </ul>
+            </div>
+            <div class="clock-widget">
+                <div id="current-date">0000.00.00 (월)</div>
+                <div id="current-time">00:00:00</div>
+            </div>
+        </aside>
+
+        <main id="main-content" class="main-content">
+            <h3 class="section-title">🔥 나라별 요리 탐방</h3>
+            <div id="post-grid" class="post-grid">
+                <p>불러오는 중...</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Global Bites 4조 Team Project. All rights reserved.</p>
+            <p>팀원: 박찬빈, 송준호, 전영원</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
