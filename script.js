@@ -83,3 +83,17 @@ window.onload = function() {
     updateClock();       // 시계 초기화
     setInterval(updateClock, 1000); // 시계 작동
 };
+
+// 랜덤 메뉴 추천 함수
+function pickMenu() {
+    const menus = ["김치찌개", "된장찌개", "파스타", "피자", "타코", "팟타이", "쌀국수", "치킨", "삼겹살"];
+    const randomIndex = Math.floor(Math.random() * menus.length);
+    const resultBox = document.getElementById("menu-result");
+    
+    // 심심하니까 '두구두구...' 효과 내기
+    resultBox.innerText = "추첨 중...";
+    
+    setTimeout(() => {
+        resultBox.innerText = menus[randomIndex];
+    }, 500); // 0.5초 뒤에 보여줌
+}
