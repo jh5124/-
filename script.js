@@ -21,7 +21,7 @@ const posts = [
         category: "태국 (Thailand)",
         title: "매콤달콤 향신료 가득, 태국 음식",
         desc: "팟타이, 똠얌꿍, 그린 커리까지. 태국의 대표 길거리 음식 3가지를 만나보세요.",
-        image: "https://images.unsplash.com/photo-1604908177225-df08d9388dc0?auto=format&fit=crop&w=500&q=60",
+        image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=500&q=60",
         link: "thailand.html" // 이동할 페이지
     }
 ];
