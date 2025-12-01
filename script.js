@@ -12,7 +12,7 @@ const posts = [
         category: "한국 요리",
         title: "소울 푸드, 김치찌개",
         desc: "돼지고기와 묵은지의 환상적인 조화. 밥 두 공기 뚝딱하는 레시피.",
-        image: "https://images.unsplash.com/photo-1583086320164-ce79c08756cd?auto=format&fit=crop&w=500&q=60"
+        image: "https://static.wtable.co.kr/image/production/service/recipe/291/a2421dff-e56c-40bd-8b40-06a91fc000a9.jpg"
     },
     {
         id: 3,
@@ -59,3 +59,39 @@ function scrollToContent() {
 
 // 5. 사이트가 켜지면 renderPosts 함수를 바로 실행해라!
 window.onload = renderPosts;
+// script.js 맨 아래에 추가하세요
+
+function updateClock() {
+    const now = new Date();
+    
+    // 날짜 포맷 (예: 2024.11.17 (일))
+    const dateString = now.toLocaleDateString('ko-KR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        weekday: 'short'
+    });
+
+    // 시간 포맷 (예: 14:30:45)
+    const timeString = now.toLocaleTimeString('ko-KR', {
+        hour12: false, // 24시간제 (오후 2시 -> 14시)
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+
+    // 화면에 찍어주기 (요소가 있을 때만 실행)
+    const dateElement = document.getElementById('current-date');
+    const timeElement = document.getElementById('current-time');
+
+    if (dateElement && timeElement) {
+        dateElement.innerText = dateString;
+        timeElement.innerText = timeString;
+    }
+}
+
+// 1초(1000ms)마다 updateClock 함수 실행
+setInterval(updateClock, 1000);
+
+// 페이지 켜지자마자 한 번 실행 (안 하면 1초 기다렸다 뜸)
+updateClock();

@@ -124,3 +124,78 @@ footer {
     padding: 20px 0;
     margin-top: 50px;
 }
+/* --- 새로 추가된 레이아웃 CSS --- */
+
+/* 본문 영역을 좌우로 배치 (Flexbox) */
+.content-wrapper {
+    display: flex;
+    gap: 30px; /* 사이드바와 본문 사이 간격 */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* 왼쪽 사이드바 디자인 */
+.sidebar {
+    width: 250px;       /* 너비 고정 */
+    flex-shrink: 0;     /* 화면 줄어들 때 찌그러짐 방지 */
+    position: sticky;   /* 스크롤 따라오게 하기 */
+    top: 20px;
+    height: fit-content;
+}
+
+.profile-box {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    text-align: left;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 오른쪽 메인 콘텐츠가 남은 공간 다 차지하게 */
+.main-content {
+    flex-grow: 1;
+}
+
+/* 시계 디자인 */
+.clock-widget {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#current-date { font-size: 0.8rem; color: #bbb; margin-bottom: 5px; }
+#current-time { font-size: 1.4rem; font-weight: bold; color: #ff6b6b; }
+
+/* 모바일에서는 위아래로 떨어지게 */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: static;
+        order: 2; /* 모바일에선 사이드바가 아래로 가게 */
+    }
+    .main-content {
+        order: 1;
+    }
+}
