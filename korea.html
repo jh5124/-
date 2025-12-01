@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 요리 - Global Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 상세 페이지 전용 스타일 */
+        .dish-card {
+            background: white; border: 1px solid #eee; border-radius: 10px;
+            margin-bottom: 40px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .dish-header {
+            background-color: #ff6b6b; color: white; padding: 15px 20px;
+        }
+        .dish-header h3 { margin: 0; font-size: 1.4rem; }
+        .dish-body { padding: 25px; }
+        .dish-img { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; }
+        
+        .info-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
+        .info-item:last-child { border-bottom: none; }
+        .info-label { font-weight: bold; color: #333; display: block; margin-bottom: 8px; font-size: 1.1rem; }
+        .info-content { color: #555; line-height: 1.7; margin-left: 5px; }
+    
+
+/* 1. 요리 스탯(능력치) 바 */
+    .dish-stats {
+        display: flex; gap: 15px; margin-bottom: 20px;
+        background: #fdfdfd; padding: 15px; border-radius: 8px; border: 2px dashed #ffb8b8;
+    }
+    .stat-item { font-size: 0.9rem; font-weight: bold; color: #555; }
+    .stat-value { color: #ff6b6b; font-size: 1.1rem; }
+
+/* 2. 알쓸신잡 (TMI) 박스 */
+    .fun-fact-box {
+        background-color: #fff9db; /* 노란 포스트잇 색 */
+        border-left: 5px solid #ffcc00;
+        padding: 15px; margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+    }
+    .fun-title { font-weight: bold; display: block; margin-bottom: 5px; color: #e67700; }
+
+/* 3. 레시피 단계 디자인 */
+    .recipe-step { margin-bottom: 10px; display: flex; align-items: start; }
+    .step-num { 
+        background: #ff6b6b; color: white; width: 25px; height: 25px; 
+        border-radius: 50%; text-align: center; line-height: 25px; 
+        margin-right: 10px; font-size: 0.8rem; flex-shrink: 0;
+    }
+    .step-text { color: #444; }
+
+/* 4. 맛집 추천 태그 스타일 */
+.store-tag {
+    display: inline-block; 
+    background: #f1f3f5; 
+    padding: 6px 12px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    margin-right: 5px; 
+    color: #495057;
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold;
+    transition: all 0.2s;  /* 부드러운 애니메이션 */
+    border: 1px solid #dee2e6;
+}
+
+/* 마우스 올렸을 때 효과 */
+.store-tag:hover { 
+    background: #ff6b6b; 
+    color: white; 
+    border-color: #ff6b6b;
+    transform: translateY(-2px); /* 살짝 위로 뜨는 느낌 */
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">🌏 Global Bites</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="korea.html" class="active" style="color:#ff6b6b;">한국 요리</a></li>
+                    <li><a href="italy.html">이탈리아 요리</a></li>
+                    <li><a href="thailand.html">태국 요리</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container content-wrapper">
+        <aside class="sidebar">
+            <div class="profile-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
+                <h3>Global Bites</h3>
+                <p>한국 요리 편</p>
+                <ul class="profile-info">
+                    <li>▪ 작성자: 송준호</li>
+                    <li>▪ 추천: ⭐⭐⭐⭐⭐</li>
+                </ul>
+            </div>
+            <div class="clock-widget">
+                 <div style="margin-bottom:10px; color:#bbb;">오늘의 추천 메뉴</div>
+                 <div style="font-weight:bold; color:white; font-size: 1.2rem;">김치찌개</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="section-title">🇰🇷 한국의 맛 Best 3</h2>
+
+            <article class="dish-card">
+    <div class="dish-header">
+        <h3>1. 김치찌개 (Kimchi Jjigae)</h3>
+    </div>
+    <div class="dish-body">
+        <img src="https://koreanmealkit.com/cdn/shop/files/005_5635210b-0154-48d2-9383-55876ceefe5c.png?v=1751750142" class="dish-img" alt="김치찌개">
+        
+        <div class="dish-stats">
+            <div class="stat-item">맵기 <span class="stat-value">🌶️🌶️🌶️</span></div>
+            <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
+            <div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
+        </div>
+
+        <div class="fun-fact-box">
+            <span class="fun-title">💡 김치찌개의 비밀 TMI</span>
+            <p style="font-size: 0.9rem; margin:0;">
+                옛날에는 김치가 빨갛지 않았다는 사실, 알고 계셨나요? 
+                18세기에 고추가 들어오기 전까지는 <b>'하얀 김치찌개'</b>를 먹었답니다!
+            </p>
+        </div>
+        <div class="info-item">
+            <span class="info-label">📜 유래와 역사</span>
+            <p class="info-content">
+                김치는 한국의 저장 음식 문화에서 시작되었습니다.
+                 겨울철에 얼거나 너무 시어버린 김치를 버리지 않고 활용하기 위해 물을 붓고 끓여 먹던 것이 찌개로 발전했습니다.
+                 <p>서민들의 배고픔을 달래주던 음식에서, 이제는 한국을 대표하는 소울 푸드가 되었습니다.</p>
+            </p>
+        </div>
+        <div class="info-item">
+            <span class="info-label">🍳 3줄 요약 레시피</span>
+            <div class="recipe-step">
+                <span class="step-num">1</span>
+                <span class="step-text">참기름에 돼지고기와 묵은지를 달달 볶는다. (냄새 주의 😋)</span>
+            </div>
+            <div class="recipe-step">
+                <span class="step-num">2</span>
+                <span class="step-text">쌀뜨물을 붓고 '팔팔' 끓인다.</span>
+            </div>
+            <div class="recipe-step">
+                <span class="step-num">3</span>
+                <span class="step-text">대파, 두부 투하! 고춧가루로 맵기를 조절하면 끝.</span>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">😋 한 줄 맛 평가</span>
+            <p class="info-content">
+                "한국인의 소울이 담긴 맛. 묵은지의 시원함과 돼지기름의 고소함이 만나 밥 두 공기는 순삭!"
+            </p>
+        </div>
+        <div class="info-item">
+            <span class="info-label">😋 맛 포인트</span>
+            <p class="info-content">
+                잘 익은 묵은지의 톡 쏘는 산미와 돼지고기 지방의 고소함이 국물에 녹아들어, 밥 한 공기로는 부족한 '밥도둑'의 맛을 냅니다.
+            </p>
+        </div>
+        <div class="info-item">
+            <span class="info-label">🗺️ 실패 없는 맛집 (클릭)</span>
+            <a href="https://map.naver.com/v5/search/은주정" target="_blank" class="store-tag">📍 은주정 (지도보기)</a>
+            <a href="https://map.naver.com/v5/search/서대문한옥집" target="_blank" class="store-tag">📍 한옥집 (지도보기)</a>
+            <a href="https://map.naver.com/v5/search/고냉지" target="_blank" class="store-tag">📍 고냉지 (지도보기)</a>
+        </div>
+    </div>
+</article>
+
+            <article class="dish-card">
+                <div class="dish-header">
+                    <h3>2. 불고기 (Bulgogi)</h3>
+                </div>
+                <div class="dish-body">
+                    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2019/03/03/11baafbe81803965b17c3ab42a5992cb1.jpg" class="dish-img" alt="불고기">
+                    <div class="info-item">
+                        <span class="info-label">📜 설명</span>
+                        <p class="info-content">얇게 썬 소고기를 양념에 재워 불에 구워 먹는 한국의 전통 고기 요리입니다. 외국인들이 가장 좋아하는 한식 1위로 꼽히기도 합니다.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="dish-card">
+                <div class="dish-header">
+                    <h3>3. 비빔밥 (Bibimbap)</h3>
+                </div>
+                <div class="dish-body">
+                    <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80" class="dish-img" alt="비빔밥">
+                    <div class="info-item">
+                        <span class="info-label">📜 설명</span>
+                        <p class="info-content">계절 나물과 고기, 고추장, 참기름을 밥과 함께 비벼 먹는 요리로, 영양소의 균형이 완벽한 건강식입니다.</p>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Global Bites 4조 Team Project. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script> 
+</body>
+</html>
