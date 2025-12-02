@@ -5,133 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이탈리아 요리 - Global Bites</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        .italy-container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-
-        .food-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .food-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-            cursor: pointer;
-            transition: transform 0.22s ease;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .food-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .food-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .food-card-content {
-            padding: 18px;
-        }
-
-        .food-card h3 {
-            margin: 0 0 10px;
-            font-size: 20px;
-        }
-
-        .food-card p {
-            margin: 0;
-            color: #777;
-            font-size: 14px;
-        }
-
-        @media (max-width: 850px) {
-            .food-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .food-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1 class="logo">🇮🇹 이탈리아 요리</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="italy.html" class="active">이탈리아 요리</a></li>
-                    <li><a href="korea.html">한국 요리</a></li>
-                    <li><a href="thailand.html">태국 요리</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="italy-container">
-        <h2 class="section-title">🍝 이탈리아 대표 요리 선택</h2>
-
-        <div class="food-grid">
-
-            <!-- 파스타 -->
-            <a href="pasta.html" class="food-card">
-                <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1500" alt="파스타">
-                <div class="food-card-content">
-                    <h3>파스타 (Pasta)</h3>
-                    <p>유래 · 레시피 · 맛 · 현지 맛집 보기</p>
-                </div>
-            </a>
-
-            <!-- 피자 -->
-            <a href="pizza.html" class="food-card">
-                <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=1500" alt="피자">
-                <div class="food-card-content">
-                    <h3>피자 (Pizza)</h3>
-                    <p>유래 · 레시피 · 맛 · 현지 맛집 보기</p>
-                </div>
-            </a>
-
-            <!-- 리조또 -->
-            <a href="risotto.html" class="food-card">
-                <img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=1500" alt="리조또">
-                <div class="food-card-content">
-                    <h3>리조또 (Risotto)</h3>
-                    <p>유래 · 레시피 · 맛 · 현지 맛집 보기</p>
-                </div>
-            </a>
-
-        </div>
+<!-- 헤더 -->
+<header>
+    <div class="container">
+        <h1 class="logo">🌏 나라별 요리</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html" class="active">이탈리아 요리</a></li>
+                <li><a href="korea.html">한국 요리</a></li>
+                <li><a href="thailand.html">태국 요리</a></li>
+            </ul>
+        </nav>
     </div>
+</header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Global Bites 4조 Team Project</p>
+ <div class="container content-wrapper">
+        <aside class="sidebar">
+            <div class="profile-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
+                <h3>Global Bites</h3>
+                <p>4조 Team Project</p>
+                <ul class="profile-info">
+                    <li>▪ 작성자: 박찬빈</li>
+                    <li>▪ 주제: 이탈리아의 맛</li>
+                </ul>
+            </div>
+            </aside>
+
+
+    <main class="main-content">
+        <h3 class="section-title">이탈리아(Italy) 대표 음식 3가지</h3>
+
+        <div class="thailand-grid">
+
+            <!-- 1) 파스타 -->
+            <a href="pasta.html" class="thai-card">
+                <img src="https://static.wtable.co.kr/image/production/service/recipe/1974/e3d221c1-c303-44b1-8540-36d1a7d64452.jpg?size=800x800" alt="파스타">
+                <div class="thai-card-content">
+                    <h4>파스타 (Pasta)</h4>
+                    <p>수백 년 전통의 이탈리아 면 요리! 크림·토마토·오일 파스타까지 다양한 조합을 즐길 수 있다.</p>
+                </div>
+            </a>
+
+            <!-- 2) 피자 -->
+            <a href="pizza.html" class="thai-card">
+                <img src="https://i.namu.wiki/i/ooNfzSamSs3pEKvhbsHCDCzETyQ0LxMCkdvD0agv-rDhP6dQcZ_DSjaxYbWT6vPX4toElbq5QMNL_5xMP7CVREd7U3D8v0dWpnc2JifkgpJV_FS4yWT8EMoeN0hCSexeMWAYq-gZf8ier_H_w9zIMw.webp" alt="피자">
+                <div class="thai-card-content">
+                    <h4>피자 (Pizza)</h4>
+                    <p>나폴리 기원! 바삭한 도우와 모차렐라·바질이 어우러진 정통 이탈리아 피자.</p>
+                </div>
+            </a>
+
+            <!-- 3) 리조또 -->
+            <a href="risotto.html" class="thai-card">
+                <img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" alt="리조또">
+                <div class="thai-card-content">
+                    <h4>리조또 (Risotto)</h4>
+                    <p>롬바르디아 지역의 부드럽고 크리미한 쌀 요리! 육수의 풍미가 깊게 배어 있다.</p>
+                </div>
+            </a>
+
         </div>
-    </footer>
+
+    </main>
+
+</div>
+ 
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Global Bites 4조 Team Project</p>
+        <p>사진 출처: 우리의 식탁, 나무위키</p>
+    </div>
+</footer>
 
 </body>
 </html>
