@@ -60,6 +60,11 @@
                         <div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
                         <div class="stat-item">조리시간 <span class="stat-value">⏰ 40분</span></div>
                     </div>
+                    <div class="like-container" style="text-align: center; margin: 20px 0;">
+    <button id="like-btn" onclick="toggleLike()" style="background: white; border: 2px solid #ff6b6b; border-radius: 50px; padding: 10px 20px; color: #ff6b6b; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        🤍 맛있겠어요! <span id="like-count">140</span>
+    </button>
+</div>
             
                     <div class="fun-fact-box">
                         <span class="fun-title">💡 불고기의 뜻을 아시나요?</span>
@@ -77,9 +82,9 @@
             
                     <div class="info-item">
                         <span class="info-label">🍳 3줄 요약 레시피</span>
-                        <div class="recipe-step"><span class="step-num">1</span><span class="step-text">간장, 설탕, 마늘, 참기름, 배즙을 섞어 '단짠 소스'를 만듭니다.</span></div>
-                        <div class="recipe-step"><span class="step-num">2</span><span class="step-text">얇게 썬 소고기를 소스에 30분 이상 재워 부드럽게 만듭니다.</span></div>
-                        <div class="recipe-step"><span class="step-num">3</span><span class="step-text">달궈진 팬에 고기와 양파, 버섯, 당면을 넣고 센 불에 볶습니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">1. </span><span class="step-text">간장, 설탕, 마늘, 참기름, 배즙을 섞어 '단짠 소스'를 만듭니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">2. </span><span class="step-text">얇게 썬 소고기를 소스에 30분 이상 재워 부드럽게 만듭니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">3. </span><span class="step-text">달궈진 팬에 고기와 양파, 버섯, 당면을 넣고 센 불에 볶습니다.</span></div>
                     </div>
             
                     <div class="info-item">
@@ -87,6 +92,15 @@
                         <a href="https://map.naver.com/v5/search/우래옥" target="_blank" class="store-tag">📍 우래옥 (평양식)</a>
                         <a href="https://map.naver.com/v5/search/사리원불고기" target="_blank" class="store-tag">📍 사리원 (서울식)</a>
                     </div>
+                    <div style="text-align: center; margin: 40px 0;">
+    <button onclick="shareLink()" style="background: #333; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer;">
+        🔗 친구에게 공유하기
+    </button>
+</div>
+
+<div id="toast-msg" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 25px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 17px;">
+    주소가 복사되었습니다! 📋
+</div>
                 </div>
             </article>
         </main>

@@ -60,7 +60,11 @@
                         <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
                         <div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
                     </div>
-            
+                    <div class="like-container" style="text-align: center; margin: 20px 0;">
+    <button id="like-btn" onclick="toggleLike()" style="background: white; border: 2px solid #ff6b6b; border-radius: 50px; padding: 10px 20px; color: #ff6b6b; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        🤍 맛있겠어요! <span id="like-count">128</span>
+    </button>
+</div>
                     <div class="fun-fact-box">
                         <span class="fun-title">💡 잠깐, 이거 아셨나요?</span>
                         <p style="font-size: 0.9rem; margin:0;">
@@ -77,9 +81,9 @@
             
                     <div class="info-item">
                         <span class="info-label">🍳 3줄 요약 레시피</span>
-                        <div class="recipe-step"><span class="step-num">1</span><span class="step-text">참기름에 돼지고기와 묵은지를 달달 볶아 풍미를 올립니다.</span></div>
-                        <div class="recipe-step"><span class="step-num">2</span><span class="step-text">쌀뜨물을 붓고 김치가 흐물해질 때까지 푹 끓립니다.</span></div>
-                        <div class="recipe-step"><span class="step-num">3</span><span class="step-text">대파, 두부를 넣고 고춧가루로 맵기를 조절하면 완성!</span></div>
+                        <div class="recipe-step"><span class="step-num">1. </span><span class="step-text">참기름에 돼지고기와 묵은지를 달달 볶아 풍미를 올립니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">2. </span><span class="step-text">쌀뜨물을 붓고 김치가 흐물해질 때까지 푹 끓립니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">3. </span><span class="step-text">대파, 두부를 넣고 고춧가루로 맵기를 조절하면 완성!</span></div>
                     </div>
             
                     <div class="info-item">
@@ -87,11 +91,20 @@
                         <a href="https://map.naver.com/v5/search/은주정" target="_blank" class="store-tag">📍 은주정 (서울 중구)</a>
                         <a href="https://map.naver.com/v5/search/서대문한옥집" target="_blank" class="store-tag">📍 한옥집 (서대문구)</a>
                     </div>
+                    <div style="text-align: center; margin: 40px 0;">
+    <button onclick="shareLink()" style="background: #333; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer;">
+        🔗 친구에게 공유하기
+    </button>
+</div>
+
+<div id="toast-msg" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 25px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 17px;">
+    주소가 복사되었습니다! 📋
+</div>
                 </div>
             </article>
         </main>
     </div>
-
+    
     <footer>
         <div class="container">
             <p>&copy; 2025 Global Bites 4조 Team Project.</p>

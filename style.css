@@ -309,3 +309,46 @@ footer {
     color: white;
     transform: translateX(-5px); /* 왼쪽으로 살짝 움직임 */
 }
+/* --- 가독성 업그레이드 스타일 --- */
+
+/* 1. 각 항목(유래, 레시피 등) 사이 간격 넓히기 */
+.info-item { 
+    margin-bottom: 35px;       /* 항목끼리 더 멀어지게 */
+    padding-bottom: 35px;      /* 안쪽 여백도 넉넉하게 */
+    border-bottom: 1px solid #eee; 
+}
+
+/* 2. 소제목(📜 유래와 역사 등) 디자인 */
+.info-label { 
+    font-weight: 800;          /* 더 굵게 */
+    color: #222;               /* 더 진하게 */
+    display: block; 
+    margin-bottom: 15px;       /* 제목과 본문 사이 간격 확보*/
+    font-size: 1.15rem; 
+}
+
+/* 3. 본문 글씨 읽기 편하게 만들기 */
+.info-content { 
+    color: #555; 
+    line-height: 1.8;          /* 줄 간격을 글자 크기의 1.8배로 (시원해짐) */
+    font-size: 1rem;
+    word-break: keep-all;      /* 단어가 중간에 뚝 끊기지 않게 (한글 최적화) */
+    letter-spacing: -0.02em;   /* 자간을 살짝 좁혀서 세련되게 */
+}
+/* --- TMI 박스 디자인 --- */
+.fun-fact-box {
+    background-color: #fff9db; /* 연한 노란색 배경 */
+    border-left: 5px solid #ffcc00; /* 왼쪽 진한 노란 줄 */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 살짝 그림자 추가 */
+}
+
+.fun-title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #e67700; /* 제목 색상 */
+    font-size: 1.05rem;
+}

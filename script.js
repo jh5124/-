@@ -97,3 +97,45 @@ function pickMenu() {
         resultBox.innerText = menus[randomIndex];
     }, 500); // 0.5초 뒤에 보여줌
 }
+
+// 좋아요 버튼 기능
+function toggleLike() {
+    const btn = document.getElementById('like-btn');
+    const countSpan = document.getElementById('like-count');
+    
+    if (btn.classList.contains('liked')) {
+        // 이미 좋아요 누른 상태면 -> 취소
+        btn.classList.remove('liked');
+        btn.innerHTML = `🤍 맛있겠어요! <span id="like-count">${parseInt(countSpan.innerText) - 1}</span>`;
+        btn.style.background = 'white';
+        btn.style.color = '#ff6b6b';
+    } else {
+        // 좋아요 누름!
+        btn.classList.add('liked');
+        // 숫자 1 증가
+        const newCount = parseInt(countSpan.innerText) + 1;
+        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${newCount}</span>`;
+        btn.style.background = '#ff6b6b';
+        btn.style.color = 'white';
+        
+        // 귀여운 알림창 띄우기 (alert 대신 사용)
+        alert("😍 저도 먹고 싶네요!"); 
+    }
+}
+
+// 공유하기 기능
+function shareLink() {
+    // 1. 현재 주소 복사
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        // 2. 토스트 메시지 띄우기
+        const toast = document.getElementById("toast-msg");
+        toast.style.visibility = "visible";
+        toast.style.opacity = "1";
+        
+        // 3. 2초 뒤에 사라지게 하기
+        setTimeout(() => {
+            toast.style.visibility = "hidden";
+        }, 2000);
+    });
+}
