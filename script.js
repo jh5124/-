@@ -1,4 +1,4 @@
-// --- 1. 데이터 (나라별 카드) ---
+//1. 데이터 (나라별 카드)
 const posts = [
     {
         id: 1,
@@ -19,14 +19,14 @@ const posts = [
     {
         id: 3,
         category: "태국 (Thailand)",
-        title: "매콤달콤 향신료 가득, 태국 음식",
-        desc: "팟타이, 똠얌꿍, 그린 커리까지. 태국의 대표 길거리 음식 3가지를 만나보세요.",
-        image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=500&q=60",
-        link: "thailand.html" // 이동할 페이지
+        title: "오감을 자극하는 미식의 천국",
+        desc: "새콤달콤함과 매콤함의 조화. 팟타이부터 똠양꿍까지 잊을 수 없는 태국의 향기를 느껴보세요.",
+        image: "https://images.unsplash.com/photo-1559314809-0d155014e29e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        link: "thailand.html"
     }
 ];
 
-// --- 2. 카드 만들기 함수 ---
+//2. 카드 만들기 함수
 function renderPosts() {
     const grid = document.getElementById('post-grid');
     if (!grid) return;
@@ -50,7 +50,7 @@ function renderPosts() {
     });
 }
 
-// --- 3. 스크롤 이동 함수 ---
+//3. 스크롤 이동 함수
 function scrollToContent() {
     const mainSection = document.getElementById('main-content');
     if(mainSection) {
@@ -58,7 +58,7 @@ function scrollToContent() {
     }
 }
 
-// --- 4. 시계 함수 ---
+//4. 시계 함수
 function updateClock() {
     const now = new Date();
     const dateString = now.toLocaleDateString('ko-KR', {
@@ -77,9 +77,23 @@ function updateClock() {
     }
 }
 
-// --- 5. 통합 실행 ---
+//5. 통합 실행
 window.onload = function() {
     renderPosts();       // 카드 그리기
     updateClock();       // 시계 초기화
     setInterval(updateClock, 1000); // 시계 작동
 };
+
+// 랜덤 메뉴 추천 함수
+function pickMenu() {
+    const menus = ["김치찌개", "된장찌개", "파스타", "피자", "타코", "팟타이", "쌀국수", "치킨", "삼겹살"];
+    const randomIndex = Math.floor(Math.random() * menus.length);
+    const resultBox = document.getElementById("menu-result");
+    
+    // 심심하니까 '두구두구...' 효과 내기
+    resultBox.innerText = "추첨 중...";
+    
+    setTimeout(() => {
+        resultBox.innerText = menus[randomIndex];
+    }, 500); // 0.5초 뒤에 보여줌
+}

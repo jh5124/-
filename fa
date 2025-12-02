@@ -1,0 +1,29 @@
+[33mcommit cd8f83d00894612e138f057ec11c737b01c831ee[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/main-page[m[33m, [m[1;31morigin/feature/main-page[m[33m)[m
+Author: junho <jjingut0611@naver.com>
+Date:   Mon Dec 1 11:07:51 2025 +0900
+
+    메인 콘텐츠를 음식 목록에서 나라별 선택 구조로 변경
+
+[33mcommit 339f7ec952bc1f10420cdb49c2fc9fb09cd8a504[m
+Author: junho <jjingut0611@naver.com>
+Date:   Mon Dec 1 10:55:29 2025 +0900
+
+    시계 생성 및 이미지 오류 해결
+
+[33mcommit 660aa20fe4bbc3c6a311fc323429f47bac1eda00[m
+Author: junho <jjingut0611@naver.com>
+Date:   Mon Dec 1 10:38:02 2025 +0900
+
+    기능 구현 및 설정 완료
+
+[33mcommit ab9d74570de46ea6904101b955787387b12bf180[m
+Author: junho <jjingut0611@naver.com>
+Date:   Mon Dec 1 10:37:19 2025 +0900
+
+    디자인 및 레이아웃 적용
+
+[33mcommit fe9d7002f6bf0f345c6f19e3d5ae1f2a73a53121[m
+Author: junho <jjingut0611@naver.com>
+Date:   Mon Dec 1 10:35:14 2025 +0900
+
+    메인 페이지 HTML 구조 작성
