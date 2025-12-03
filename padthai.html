@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팟타이 - Global Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">🌏 Global Bites</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="italy.html">이탈리아 요리</a></li>
+                    <li><a href="korea.html">한국 요리</a></li>
+                    <li><a href="thailand.html" class="active" style="color:#ff6b6b;">태국 요리</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container content-wrapper">
+        <aside class="sidebar">
+            <div class="profile-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
+                <h3>Global Bites</h3>
+                <p>4조 Team Project</p>
+                <ul class="profile-info">
+                    <li>▪ 작성자: 전원영</li>
+                    <li>▪ 주제: 태국의 맛</li>
+                </ul>
+            </div>
+            <div class="clock-widget">
+                <div id="current-date">0000.00.00 (월)</div>
+                <div id="current-time">00:00:00</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
+
+            <article class="dish-card">
+                <div class="dish-header">
+                    <h3>1. 팟타이 (Pad Thai)</h3>
+                </div>
+                <div class="dish-body">
+                    <img src="https://i.namu.wiki/i/hPjG2jdG2dVhEaN7p4-zOEOFosiR0VySHVe96FaurZsKcgh30zzQkAsJ9AM8nIpIGQd_3-fO2VAybTAuKZXTMgAYZvk7-_3hVvcogCAW6OCOcWvRNFsLBPVrCRAwRaCzJ9QGpli1qhO3QufGoLXukA.webp" class="dish-img" alt="팟타이">
+
+                    <div class="dish-stats">
+                        <div class="stat-item">맛 타입 <span class="stat-value">🍋 새콤 + 달콤 + 고소</span></div>
+                        <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
+                        <div class="stat-item">조리시간 <span class="stat-value">⏰ 15분</span></div>
+                    </div>
+
+                    <div class="fun-fact-box">
+                        <span class="fun-title">💡 팟타이 트리비아</span>
+                        <p style="font-size: 0.9rem; margin:0;">
+                            태국 정부가 국가 홍보를 위해 **국민 면 요리**로 밀었던 음식이 바로 팟타이!
+                            그래서 지금은 태국 길거리에서 가장 흔하게 볼 수 있는 대표 메뉴가 되었어요!
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">📜 유래와 특징</span>
+                        <p class="info-content">
+                            팟타이는 쌀국수에 새우, 숙주, 계란, 땅콩을 넣고 타마린드 소스로 볶아 만든 태국식 볶음면입니다.
+                            한국인의 입맛에도 잘 맞는 새콤달콤한 맛이 특징이죠.
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">🍳 3줄 요약 레시피</span>
+                        <div class="recipe-step"><span class="step-num">1</span><span class="step-text">타마린드 소스를 팬에 넣고 쌀국수와 재료들을 볶아요.</span></div>
+                        <div class="recipe-step"><span class="step-num">2</span><span class="step-text">계란을 풀어 넣어 고소함을 더해요.</span></div>
+                        <div class="recipe-step"><span class="step-num">3</span><span class="step-text">땅콩과 라임을 뿌려 완성!</span></div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">🗺️ 태국 팟타이 현지 맛집 (클릭)</span>
+                        <a href="https://share.google/UlFVmENrNi3s46dzs" target="_blank" class="store-tag">📍 팁사마이</a>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- 🗨️💬 댓글 섹션 (푸터 바로 위에 넣음!!) -->
+    <div class="container" style="margin-top: 40px; margin-bottom: 80px;">
+        <h3 style="margin-bottom: 15px;">💬 댓글 남기기</h3>
+
+        <!-- 댓글 입력창 -->
+        <div style="background:#fff; padding: 15px; border:1px solid #ddd; border-radius:8px; margin-bottom:15px;">
+            <textarea id="comment-input"
+                      placeholder="댓글을 입력하세요..."
+                      style="width:100%; height:80px; padding:10px; border-radius:6px; border:1px solid #ccc; resize:none;"></textarea>
+            <button onclick="addComment()"
+                    style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;">
+                댓글 작성
+            </button>
+        </div>
+
+        <!-- 댓글 목록 -->
+        <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd;">
+            <p style="color:#888;">작성된 댓글이 없습니다.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
