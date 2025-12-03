@@ -97,3 +97,35 @@ function pickMenu() {
         resultBox.innerText = menus[randomIndex];
     }, 500); // 0.5초 뒤에 보여줌
 }
+function addComment() {
+    const input = document.getElementById("comment-input");
+    const list = document.getElementById("comment-list");
+
+    const text = input.value.trim();
+    if (text === "") {
+        alert("댓글을 입력해주세요!");
+        return;
+    }
+
+    // 첫 댓글일 경우 안내문 삭제
+    if (list.children.length === 1 && list.children[0].tagName === "P") {
+        list.innerHTML = "";
+    }
+
+    // 댓글 요소 생성
+    const commentBox = document.createElement("div");
+    commentBox.style.padding = "10px 0";
+    commentBox.style.borderBottom = "1px solid #eee";
+
+    const date = new Date().toLocaleString("ko-KR");
+
+    commentBox.innerHTML = `
+        <p style="margin: 0 0 5px;"><b>익명</b> 
+        <span style="color:#aaa; font-size:0.8rem;">(${date})</span></p>
+        <p style="margin: 0;">${text}</p>
+    `;
+
+    list.appendChild(commentBox);
+
+    input.value = "";
+}
