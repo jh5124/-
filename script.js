@@ -82,6 +82,8 @@ window.onload = function() {
     renderPosts();       // 카드 그리기
     updateClock();       // 시계 초기화
     setInterval(updateClock, 1000); // 시계 작동
+
+    loadTheme();         // 👈 [추가] 저장된 다크 모드 불러오기
 };
 
 // 랜덤 메뉴 추천 함수
@@ -128,4 +130,82 @@ function addComment() {
     list.appendChild(commentBox);
 
     input.value = "";
+}
+
+
+// 좋아요 버튼 기능
+function toggleLike() {
+    const btn = document.getElementById('like-btn');
+    const countSpan = document.getElementById('like-count');
+    
+    if (btn.classList.contains('liked')) {
+        // 이미 좋아요 누른 상태면 -> 취소
+        btn.classList.remove('liked');
+        btn.innerHTML = `🤍 맛있겠어요! <span id="like-count">${parseInt(countSpan.innerText) - 1}</span>`;
+        btn.style.background = 'white';
+        btn.style.color = '#ff6b6b';
+    } else {
+        // 좋아요 누름!
+        btn.classList.add('liked');
+        // 숫자 1 증가
+        const newCount = parseInt(countSpan.innerText) + 1;
+        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${newCount}</span>`;
+        btn.style.background = '#ff6b6b';
+        btn.style.color = 'white';
+        
+        // 귀여운 알림창 띄우기 (alert 대신 사용)
+        alert("😍 저도 먹고 싶네요!"); 
+    }
+}
+
+// 공유하기 기능
+function shareLink() {
+    // 1. 현재 주소 복사
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        // 2. 토스트 메시지 띄우기
+        const toast = document.getElementById("toast-msg");
+        toast.style.visibility = "visible";
+        toast.style.opacity = "1";
+        
+        // 3. 2초 뒤에 사라지게 하기
+        setTimeout(() => {
+            toast.style.visibility = "hidden";
+        }, 2000);
+    });
+}
+
+// --- 🌙 다크 모드 (업그레이드: 저장 기능 추가) ---
+
+// 1. 다크 모드 켜고 끄기 (버튼 누를 때 실행)
+function toggleDarkMode() {
+    const body = document.body;
+    const btn = document.getElementById("dark-mode-btn");
+    
+    // 클래스 토글
+    body.classList.toggle("dark-mode");
+
+    // ⭐ 핵심: 현재 상태를 브라우저에 '저장'하기
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark"); // "테마는 다크다"라고 적어둠
+        if(btn) btn.innerText = "☀️";
+    } else {
+        localStorage.setItem("theme", "light"); // "테마는 라이트다"라고 적어둠
+        if(btn) btn.innerText = "🌙";
+    }
+}
+
+// 2. 저장된 테마 불러오기 (페이지 열리자마자 실행)
+function loadTheme() {
+    const theme = localStorage.getItem("theme"); // 쪽지 확인
+    const btn = document.getElementById("dark-mode-btn");
+    const body = document.body;
+
+    if (theme === "dark") {
+        body.classList.add("dark-mode"); // 다크 모드 강제 적용
+        if(btn) btn.innerText = "☀️";
+    } else {
+        body.classList.remove("dark-mode");
+        if(btn) btn.innerText = "🌙";
+    }
 }

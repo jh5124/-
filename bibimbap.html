@@ -10,18 +10,23 @@
 <body>
 
     <header>
-        <div class="container">
-            <h1 class="logo">🌏 Global Bites</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="italy.html">이탈리아 요리</a></li>
-                    <li><a href="korea.html" class="active" style="color:#ff6b6b;">한국 요리</a></li>
-                    <li><a href="thailand.html">태국 요리</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <h1 class="logo">🌏 Global Bites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html">태국</a></li>
+                <li>
+                    <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">
+                        🌙
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <div class="container content-wrapper">
         <aside class="sidebar">
@@ -59,6 +64,11 @@
                         <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
                         <div class="stat-item">건강지수 <span class="stat-value">💚💚💚💚💚</span> (만점)</div>
                     </div>
+                    <div class="like-container" style="text-align: center; margin: 20px 0;">
+    <button id="like-btn" onclick="toggleLike()" style="background: white; border: 2px solid #ff6b6b; border-radius: 50px; padding: 10px 20px; color: #ff6b6b; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        🤍 맛있겠어요! <span id="like-count">258</span>
+    </button>
+</div>
             
                     <div class="fun-fact-box">
                         <span class="fun-title">💡 마이클 잭슨이 사랑한 음식?</span>
@@ -76,9 +86,9 @@
             
                     <div class="info-item">
                         <span class="info-label">🍳 3줄 요약 레시피</span>
-                        <div class="recipe-step"><span class="step-num">1</span><span class="step-text">시금치, 콩나물, 당근 등 제철 나물을 데치거나 볶아 준비합니다.</span></div>
-                        <div class="recipe-step"><span class="step-num">2</span><span class="step-text">따뜻한 밥 위에 나물을 예쁘게 돌려 담고, 계란 프라이를 올립니다.</span></div>
-                        <div class="recipe-step"><span class="step-num">3</span><span class="step-text">고추장 한 스푼과 참기름을 듬뿍 두르고 쓱쓱 비벼 먹습니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">1. </span><span class="step-text">시금치, 콩나물, 당근 등 제철 나물을 데치거나 볶아 준비합니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">2. </span><span class="step-text">따뜻한 밥 위에 나물을 예쁘게 돌려 담고, 계란 프라이를 올립니다.</span></div>
+                        <div class="recipe-step"><span class="step-num">3. </span><span class="step-text">고추장 한 스푼과 참기름을 듬뿍 두르고 쓱쓱 비벼 먹습니다.</span></div>
                     </div>
             
                     <div class="info-item">
@@ -86,6 +96,17 @@
                         <a href="https://map.naver.com/v5/search/목멱산방" target="_blank" class="store-tag">📍 목멱산방 (미슐랭)</a>
                         <a href="https://map.naver.com/v5/search/전주중앙회관" target="_blank" class="store-tag">📍 전주중앙회관 (명동)</a>
                     </div>
+                    <div class="info-item">
+                        <span class="info-label">🗺️ 실패 없는 맛집 (클릭)</span>
+                        <a href="https://map.naver.com/v5/search/우래옥" target="_blank" class="store-tag">📍 우래옥 (평양식)</a>
+                        <a href="https://map.naver.com/v5/search/사리원불고기" target="_blank" class="store-tag">📍 사리원 (서울식)</a>
+                    </div>
+                    <div style="text-align: center; margin: 40px 0;">
+    <button onclick="shareLink()" style="background: #333; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer;">
+        🔗 친구에게 공유하기
+    </button>
+</div>
+
                 </div>
             </article>
         </main>
