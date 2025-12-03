@@ -85,6 +85,7 @@ window.onload = function() {
 
     loadTheme();         // 👈 [추가] 저장된 다크 모드 불러오기
     loadLikeStatus(); // 👈 [추가] 좋아요 상태 확인!
+    initScrollAnimation(); // 👈 [추가] 애니메이션 감시 시작
 };
 
 // 랜덤 메뉴 추천 함수
@@ -259,4 +260,21 @@ function toggleLike() {
         
         alert("😍 저도 먹고 싶네요!");
     }
+}
+
+// --- ✨ 스크롤 애니메이션 (Intersection Observer) ---
+function initScrollAnimation() {
+    // 1. 감시자(Observer) 생성
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // 화면에 요소가 10% 정도 보이면 실행
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active'); // .active 클래스 추가 (나타남!)
+            }
+        });
+    }, { threshold: 0.1 }); 
+
+    // 2. 애니메이션 적용할 모든 요소 찾아서 감시 시작
+    const targetElements = document.querySelectorAll('.scroll-animate');
+    targetElements.forEach(el => observer.observe(el));
 }

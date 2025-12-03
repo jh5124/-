@@ -453,3 +453,18 @@ body.dark-mode .fun-fact-box {
     border-left-color: #ffcc00;
     color: #ddd;
 }
+
+/* --- ✨ 스크롤 등장 애니메이션 --- */
+
+/* 1. 기본 상태: 숨겨져 있고, 살짝 아래로 내려가 있음 */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px); /* 아래로 30px 내려가 있음 */
+    transition: all 0.8s ease-out; /* 0.8초 동안 부드럽게 올라옴 */
+}
+
+/* 2. 활성 상태: JS가 이 클래스를 붙이면 나타남 */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 이동 */
+}
