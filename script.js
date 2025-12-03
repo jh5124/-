@@ -84,6 +84,7 @@ window.onload = function() {
     setInterval(updateClock, 1000); // 시계 작동
 
     loadTheme();         // 👈 [추가] 저장된 다크 모드 불러오기
+    loadLikeStatus(); // 👈 [추가] 좋아요 상태 확인!
 };
 
 // 랜덤 메뉴 추천 함수
@@ -207,5 +208,55 @@ function loadTheme() {
     } else {
         body.classList.remove("dark-mode");
         if(btn) btn.innerText = "🌙";
+    }
+}
+
+// --- ❤️ 좋아요 버튼 (저장 기능 포함) ---
+
+// 1. 좋아요 상태 불러오기 (페이지 열릴 때 실행)
+function loadLikeStatus() {
+    const btn = document.getElementById('like-btn');
+    // 상세 페이지가 아니면(버튼이 없으면) 실행 안 함
+    if (!btn) return;
+
+    const countSpan = document.getElementById('like-count');
+    const foodName = btn.getAttribute('data-name'); // 이름표(kimchi 등) 확인
+    const isLiked = localStorage.getItem('like_' + foodName); // 저장된 기록 확인
+
+    if (isLiked === 'yes') {
+        // 저장된 게 있으면 '좋아요' 상태로 변경
+        btn.classList.add('liked');
+        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${parseInt(countSpan.innerText) + 1}</span>`;
+        btn.style.background = '#ff6b6b';
+        btn.style.color = 'white';
+    }
+}
+
+// 2. 좋아요 버튼 누를 때 (토글 + 저장)
+function toggleLike() {
+    const btn = document.getElementById('like-btn');
+    const countSpan = document.getElementById('like-count');
+    const foodName = btn.getAttribute('data-name'); // 이름표 확인
+    
+    if (btn.classList.contains('liked')) {
+        // [취소]
+        btn.classList.remove('liked');
+        btn.innerHTML = `🤍 맛있겠어요! <span id="like-count">${parseInt(countSpan.innerText) - 1}</span>`;
+        btn.style.background = 'white';
+        btn.style.color = '#ff6b6b';
+        
+        // 저장소에서 삭제
+        localStorage.removeItem('like_' + foodName);
+    } else {
+        // [좋아요]
+        btn.classList.add('liked');
+        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${parseInt(countSpan.innerText) + 1}</span>`;
+        btn.style.background = '#ff6b6b';
+        btn.style.color = 'white';
+        
+        // 저장소에 "이 음식 좋아요 눌렀음" 기록
+        localStorage.setItem('like_' + foodName, 'yes');
+        
+        alert("😍 저도 먹고 싶네요!");
     }
 }
