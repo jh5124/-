@@ -352,3 +352,42 @@ footer {
     color: #e67700; /* 제목 색상 */
     font-size: 1.05rem;
 }
+
+/* --- 🌙 다크 모드 스타일 --- */
+
+/* 1. 기본 배경과 글자색 반전 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* 2. 흰색 배경이었던 카드, 헤더, 사이드바를 어둡게 */
+body.dark-mode header,
+body.dark-mode .dish-card,
+body.dark-mode .sidebar,
+body.dark-mode .profile-box, 
+body.dark-mode .thai-card,
+body.dark-mode .card,
+body.dark-mode .random-menu-widget, 
+body.dark-mode .search-widget div {
+    background-color: #1e1e1e !important; /* 강제 적용 */
+    color: #e0e0e0;
+    border-color: #333; /* 테두리도 어둡게 */
+}
+
+/* 3. 링크 글자색 조정 (너무 어두우면 안 보이니까) */
+body.dark-mode a {
+    color: #bbbbbb;
+}
+body.dark-mode .logo,
+body.dark-mode .active,
+body.dark-mode .stat-value {
+    color: #ff8787; /* 붉은색을 살짝 연하게 */
+}
+
+/* 4. TMI 박스 등 밝은 박스 처리 */
+body.dark-mode .fun-fact-box {
+    background-color: #2a2a2a;
+    border-left-color: #ffcc00;
+    color: #ddd;
+}
