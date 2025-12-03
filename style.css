@@ -185,67 +185,6 @@ footer {
 #current-date { font-size: 0.8rem; color: #bbb; margin-bottom: 5px; }
 #current-time { font-size: 1.4rem; font-weight: bold; color: #ff6b6b; }
 
-/* 모바일에서는 위아래로 떨어지게 */
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        position: static;
-        order: 2; /* 모바일에선 사이드바가 아래로 가게 */
-    }
-    .main-content {
-        order: 1;
-    }
-}
-.thailand-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.thai-card {
-    display: block;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.thai-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.thai-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;     /* 사진 비율 유지하며 꽉 채움 */
-    border-bottom: 1px solid #eee;
-}
-
-.thai-card-content {
-    padding: 18px;
-}
-
-.thai-card-content h4 {
-    margin-bottom: 8px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ff6b6b;   /* 전체 사이트 포인트 컬러 */
-}
-
-.thai-card-content p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.45;
-}
-
 /* 모바일에서 한 줄 카드 → 세로 카드로 변화 */
 @media (max-width: 768px) {
     .thai-card img {
