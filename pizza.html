@@ -1,0 +1,71 @@
+<!-- UPDATED pizza.html with rich detail -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>피자 - Global Bites</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1 class="logo">🌍 Global Bites</h1>
+<nav>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="italy.html" class="active">이탈리아 요리</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="container content-wrapper">
+<aside class="sidebar">
+<div class="profile-box">
+<img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+<h3>Global Bites</h3>
+</div>
+<div class="clock-widget">
+<div id="current-date"></div>
+<div id="current-time"></div>
+</div>
+</aside>
+<main class="main-content">
+<a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
+<article class="dish-card">
+<div class="dish-header"><h3>🍕 마르게리타 (Margherita)</h3></div>
+<div class="dish-body">
+<img src="https://i.namu.wiki/i/ooNfzSamSs3pEKvhbsHCDCzETyQ0LxMCkdvD0agv-rDhP6dQcZ_DSjaxYbWT6vPX4toElbq5QMNL_5xMP7CVREd7U3D8v0dWpnc2JifkgpJV_FS4yWT8EMoeN0hCSexeMWAYq-gZf8ier_H_w9zIMw.webp" class="dish-img">
+<div class="dish-stats">
+<div class="stat-item">치즈맛 <span class="stat-value">🧀🧀🧀🧀</span></div>
+<div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
+<div class="stat-item">조리시간 <span class="stat-value">⏰ 1시간</span></div>
+</div>
+<div class="fun-fact-box">
+<span class="fun-title">💡 재미있는 사실</span>
+<p>마르게리타 피자는 1889년 이탈리아 왕비 마르게리타를 기념해 만들어졌으며, 토마토·모차렐라·바질의 색은 이탈리아 국기를 상징합니다.</p>
+</div>
+<div class="info-item">
+<span class="info-label">🍳 3줄 요약 레시피</span>
+<div class="recipe-step"><span class="step-num">1</span><span class="step-text">강력분 반죽을 30분 이상 발효.</span></div>
+<div class="recipe-step"><span class="step-num">2</span><span class="step-text">토마토 소스와 모차렐라 토핑.</span></div>
+<div class="recipe-step"><span class="step-num">3</span><span class="step-text">250℃ 이상의 높은 온도에서 단시간 구움.</span></div>
+</div>
+<div class="info-item">
+<span class="info-label">📜 설명</span>
+<p>마르게리타는 피자의 기본 형태로, 담백한 토마토 베이스와 신선한 모차렐라의 조화를 즐길 수 있습니다. 간단하지만 피자의 본질을 가장 잘 보여주는 메뉴입니다.</p>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer><p>&copy; 2025 Global Bites</p></footer>
+<script>
+function updateClock(){
+const d = new Date();
+document.getElementById('current-date').textContent = d.toLocaleDateString();
+document.getElementById('current-time').textContent = d.toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+</body>
+</html>
