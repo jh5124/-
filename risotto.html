@@ -1,12 +1,13 @@
-<!-- UPDATED risotto.html with richer description -->
 <!DOCTYPE html>
 <html lang="ko">
+<!-- UPDATED risotto.html with same style as pizza.html -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리조또 - Global Bites</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <header>
 <div class="container">
@@ -25,7 +26,6 @@
 <div class="profile-box">
 <img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" class="profile-img">
 <h3>Global Bites</h3>
-<p>4조 Team Project</p>
 </div>
 
 <div class="clock-widget">
@@ -38,29 +38,57 @@
 <a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
 
 <article class="dish-card">
-<div class="dish-header"><h3>🥘 리조또 (Risotto)</h3></div>
+
+<div class="dish-header">
+<h3>🍚 크림 리조또 (Cream Risotto)</h3>
+</div>
+
 <div class="dish-body">
 
-<!-- 리조또 이미지 (예시 base64) -->
-<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg">
+<!-- 이미지 변경 가능 -->
+<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" class="dish-img">
 
-<p>
-리조또는 이탈리아 북부에서 시작된 쌀 기반 요리로, 육수(Brodo)를 조금씩 넣어가며 천천히 끓여내는 방식이 특징입니다.
-일반적인 밥보다 훨씬 부드럽고 크리미한 질감을 가지며, 버터, 화이트 와인, 파르미지아노 치즈를 통해 깊고 진한 풍미를 냅니다.
-또한 버섯, 해산물, 트러플, 채소 등 다양한 재료를 활용해 지역마다 다른 스타일로 발전했습니다.
-</p>
+<div class="dish-stats">
+<div class="stat-item">고소함 <span class="stat-value">🧈🧈🧈🧈</span></div>
+<div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
+<div class="stat-item">조리시간 <span class="stat-value">⏰ 40분</span></div>
+</div>
 
-<p>
-리조또는 단순한 쌀요리가 아니라 ‘시간과 정성’이 들어가는 요리로 평가됩니다. 끊임없이 저어주며 쌀의 전분을 자연스럽게 풀어내야 하기 때문에,
-요리사가 직접 정성을 들여야만 완성도 높은 크리미 질감을 얻을 수 있습니다.
-이 점에서 이탈리아 미식 문화의 정교한 요리 철학을 잘 보여주는 대표적인 요리입니다.
-</p>
+<div class="fun-fact-box">
+<span class="fun-title">💡 재미있는 사실</span>
+<p>리조또는 북부 이탈리아에서 유래한 전통 쌀요리로, 쌀에 육수를 천천히 흡수시키며 끈기 있는 식감을 만드는 조리법이 특징입니다.</p>
+</div>
+
+<div class="info-item">
+<span class="info-label">🍳 3줄 요약 레시피</span>
+<div class="recipe-step"><span class="step-num">1</span><span class="step-text">양파와 버터를 볶아 향을 내고 쌀을 코팅.</span></div>
+<div class="recipe-step"><span class="step-num">2</span><span class="step-text">육수를 여러 번 나눠 넣으며 흡수될 때까지 끓이기.</span></div>
+<div class="recipe-step"><span class="step-num">3</span><span class="step-text">생크림·치즈를 넣어 마무리.</span></div>
+</div>
+
+<div class="info-item">
+<span class="info-label">📜 설명</span>
+<p>크림 리조또는 부드럽고 고소한 풍미가 특징으로, 쌀알 하나하나에 깊은 맛이 배어 있습니다. 진한 크림과 치즈의 조화로 누구나 좋아하는 이탈리아식 정통 홈메이드 요리입니다.</p>
+</div>
 
 </div>
 </article>
 </main>
 </div>
 
-<script src="clock.js"></script>
+<footer>
+<p>&copy; 2025 Global Bites</p>
+</footer>
+
+<script>
+function updateClock(){
+const d = new Date();
+document.getElementById('current-date').textContent = d.toLocaleDateString();
+document.getElementById('current-time').textContent = d.toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
 </body>
 </html>
