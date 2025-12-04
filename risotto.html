@@ -1,56 +1,66 @@
+<!-- UPDATED risotto.html with richer description -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리조또 - Italy Foods</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리조또 - Global Bites</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
+<div class="container">
+<h1 class="logo">🌍 Global Bites</h1>
+<nav>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="italy.html" class="active">이탈리아 요리</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-    <header>
-        <h1 class="food-title">리조또 (Risotto)</h1>
-    </header>
+<div class="container content-wrapper">
+<aside class="sidebar">
+<div class="profile-box">
+<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" class="profile-img">
+<h3>Global Bites</h3>
+<p>4조 Team Project</p>
+</div>
 
-    <section class="food-section">
-        <img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" alt="리조또 이미지" class="food-image">
+<div class="clock-widget">
+<div id="current-date"></div>
+<div id="current-time"></div>
+</div>
+</aside>
 
-        <h2>🍚 리조또란?</h2>
-        <p class="food-desc">
-            리조또(Risotto)는 이탈리아 북부에서 비롯된 대표적인 쌀 요리로, 쌀을 버터와 육수로 천천히 익혀
-            크리미하고 부드러운 식감을 만드는 것이 특징입니다.  
-            사용되는 쌀은 물기를 잘 흡수하면서도 형태가 쉽게 무너지지 않는 
-            **아보리오(Arborio)** 또는 **카르나롤리(Carnaroli)** 품종이 대표적입니다.
-        </p>
+<main class="main-content">
+<a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
 
-        <h2>🍄 주요 재료</h2>
-        <ul class="food-list">
-            <li>아보리오 / 카르나롤리 쌀</li>
-            <li>버터 & 올리브오일</li>
-            <li>화이트 와인</li>
-            <li>치킨 또는 베지터블 스톡(육수)</li>
-            <li>파르메산 치즈</li>
-            <li>양파, 마늘 등 향신 채소</li>
-        </ul>
+<article class="dish-card">
+<div class="dish-header"><h3>🥘 리조또 (Risotto)</h3></div>
+<div class="dish-body">
 
-        <h2>🔥 리조또의 핵심 조리법</h2>
-        <p class="food-desc">
-            리조또는 한 번에 많은 양의 물을 붓지 않고,  
-            **육수를 여러 번 나누어 넣어가며 천천히 저어주는 방식**으로 조리합니다.
-            이 과정에서 쌀 표면의 전분이 육수와 섞여  
-            리조또 특유의 크리미한 텍스처가 만들어집니다.
-        </p>
+<!-- 리조또 이미지 (예시 base64) -->
+<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg">
 
-        <h2>💛 대표적인 리조또 종류</h2>
-        <ul class="food-list">
-            <li><strong>밀라네제 리조또</strong> – 사프란 향이 나는 클래식 리조또</li>
-            <li><strong>버섯 리조또</strong> – 포르치니·표고버섯 등 풍미 강조</li>
-            <li><strong>해산물 리조또</strong> – 새우·홍합·오징어 등을 사용</li>
-            <li><strong>치즈 리조또</strong> – 파르메산·고르곤졸라를 이용한 진한 맛</li>
-        </ul>
+<p>
+리조또는 이탈리아 북부에서 시작된 쌀 기반 요리로, 육수(Brodo)를 조금씩 넣어가며 천천히 끓여내는 방식이 특징입니다.
+일반적인 밥보다 훨씬 부드럽고 크리미한 질감을 가지며, 버터, 화이트 와인, 파르미지아노 치즈를 통해 깊고 진한 풍미를 냅니다.
+또한 버섯, 해산물, 트러플, 채소 등 다양한 재료를 활용해 지역마다 다른 스타일로 발전했습니다.
+</p>
 
-        <a href="italy.html" class="back-btn">뒤로가기</a>
-    </section>
+<p>
+리조또는 단순한 쌀요리가 아니라 ‘시간과 정성’이 들어가는 요리로 평가됩니다. 끊임없이 저어주며 쌀의 전분을 자연스럽게 풀어내야 하기 때문에,
+요리사가 직접 정성을 들여야만 완성도 높은 크리미 질감을 얻을 수 있습니다.
+이 점에서 이탈리아 미식 문화의 정교한 요리 철학을 잘 보여주는 대표적인 요리입니다.
+</p>
 
+</div>
+</article>
+</main>
+</div>
+
+<script src="clock.js"></script>
 </body>
 </html>

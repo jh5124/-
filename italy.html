@@ -3,84 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이탈리아 요리 - Global Bites</title>
+    <title>나라별 요리 - Global Bites</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- 헤더 -->
-<header>
+    <header>
     <div class="container">
-        <h1 class="logo">🌏 나라별 요리</h1>
+        <h1 class="logo">🌏 Global Bites</h1>
         <nav>
             <ul>
                 <li><a href="index.html">홈</a></li>
-                <li><a href="italy.html" class="active">이탈리아 요리</a></li>
-                <li><a href="korea.html">한국 요리</a></li>
-                <li><a href="thailand.html">태국 요리</a></li>
+                <li><a href="italy.html">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html">태국</a></li>
+                <li>
+                    <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">
+                        🌙
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>오늘 저녁, 세계 여행 어떠세요?</h2>
+            <p>팀원들이 직접 소개하는 나라별 최고의 레시피와 맛집 탐방</p>
+            <button onclick="scrollToContent()">요리 구경하기</button>
+        </div>
+    </section>
 
- <div class="container content-wrapper">
+    <div class="container content-wrapper">
         <aside class="sidebar">
             <div class="profile-box">
                 <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
                 <h3>Global Bites</h3>
                 <p>4조 Team Project</p>
                 <ul class="profile-info">
-                    <li>▪ 작성자: 박찬빈</li>
-                    <li>▪ 주제: 이탈리아의 맛</li>
+                    <li>▪ 팀원: 박찬빈, 송준호, 전원영</li>
+                    <li>▪ 주제: 세계 요리 탐방</li>
                 </ul>
             </div>
-            </aside>
-
-
-    <main class="main-content">
-        <h3 class="section-title">이탈리아(Italy) 대표 음식 3가지</h3>
-
-        <div class="thailand-grid">
-
-            <!-- 1) 파스타 -->
-            <a href="pasta.html" class="thai-card">
-                <img src="https://static.wtable.co.kr/image/production/service/recipe/1974/e3d221c1-c303-44b1-8540-36d1a7d64452.jpg?size=800x800" alt="파스타">
-                <div class="thai-card-content">
-                    <h4>파스타 (Pasta)</h4>
-                    <p>수백 년 전통의 이탈리아 면 요리! 크림·토마토·오일 파스타까지 다양한 조합을 즐길 수 있다.</p>
-                </div>
-            </a>
-
-            <!-- 2) 피자 -->
-            <a href="pizza.html" class="thai-card">
-                <img src="https://i.namu.wiki/i/ooNfzSamSs3pEKvhbsHCDCzETyQ0LxMCkdvD0agv-rDhP6dQcZ_DSjaxYbWT6vPX4toElbq5QMNL_5xMP7CVREd7U3D8v0dWpnc2JifkgpJV_FS4yWT8EMoeN0hCSexeMWAYq-gZf8ier_H_w9zIMw.webp" alt="피자">
-                <div class="thai-card-content">
-                    <h4>피자 (Pizza)</h4>
-                    <p>나폴리 기원! 바삭한 도우와 모차렐라·바질이 어우러진 정통 이탈리아 피자.</p>
-                </div>
-            </a>
-
-            <!-- 3) 리조또 -->
-            <a href="risotto.html" class="thai-card">
-                <img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" alt="리조또">
-                <div class="thai-card-content">
-                    <h4>리조또 (Risotto)</h4>
-                    <p>롬바르디아 지역의 부드럽고 크리미한 쌀 요리! 육수의 풍미가 깊게 배어 있다.</p>
-                </div>
-            </a>
-
-        </div>
-
-    </main>
-
-</div>
- 
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Global Bites 4조 Team Project</p>
-        <p>사진 출처: 우리의 식탁, 나무위키</p>
+            <div class="clock-widget">
+                <div id="current-date">0000.00.00 (월)</div>
+                <div id="current-time">00:00:00</div>
+            </div>
+            <div class="random-menu-widget" style="margin-top: 20px; background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+    <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: #333;">🎲 오늘 뭐 먹지?</h4>
+    <div id="menu-result" style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin: 15px 0; min-height: 30px;">
+        ❓
     </div>
-</footer>
+    <button onclick="pickMenu()" style="background: #333; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">
+        메뉴 뽑기 
+    </button>
+        <div class="search-widget" style="margin-top: 20px;">
+    <div style="display: flex; background: white; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px;">
+        <input type="text" placeholder="레시피 검색..." style="border: none; outline: none; width: 100%; font-size: 0.9rem;"> <!--작동은 안 함-->
+        <span style="cursor: pointer;">🔍</span>
+    </div> 
+</div>
+</div>
+        </aside>
+        
+        <main id="main-content" class="main-content">
+            <h3 class="section-title">🔥 나라별 요리 탐방</h3>
+            <div id="post-grid" class="post-grid">
+                <p>불러오는 중...</p>
+            </div>
+        </main>
+    </div>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Global Bites 4조 Team Project. All rights reserved.</p>
+            <p>팀원: 박찬빈, 송준호, 전원영</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
