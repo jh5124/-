@@ -1,4 +1,6 @@
-<!-- UPDATED risotto.html with rich detail -->
+<!-- UPDATED risotto.html with richer description -->
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,55 +19,48 @@
 </nav>
 </div>
 </header>
+
 <div class="container content-wrapper">
 <aside class="sidebar">
 <div class="profile-box">
-<img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" class="profile-img">
 <h3>Global Bites</h3>
+<p>4조 Team Project</p>
 </div>
+
 <div class="clock-widget">
 <div id="current-date"></div>
 <div id="current-time"></div>
 </div>
 </aside>
+
 <main class="main-content">
 <a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
+
 <article class="dish-card">
-<div class="dish-header"><h3>🍚 버섯 리조또 (Risotto ai Funghi)</h3></div>
+<div class="dish-header"><h3>🥘 리조또 (Risotto)</h3></div>
 <div class="dish-body">
-<img src="https://i.namu.wiki/i/LKbmfTadk8Ke7F0GLHz81ZSUVTov3zv4VzEHt3-vosL8tUe2VgCx6T1xkXZt7pxw8mCy7e4kdXV6YRjD75m75uYA8pVeNqrCv1qa08WMsNev4QMjZDR4emaG4x6H8xrFscrDn04HYor5T4CdW5eHNA.webp" class="dish-img">
-<div class="dish-stats">
-<div class="stat-item">크리미함 <span class="stat-value">🥣🥣🥣🥣🥣</span></div>
-<div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐⭐</span></div>
-<div class="stat-item">조리시간 <span class="stat-value">⏰ 40분</span></div>
-</div>
-<div class="fun-fact-box">
-<span class="fun-title">💡 재미있는 사실</span>
-<p>리조또는 쌀의 전분을 천천히 끌어내어 크리미한 식감을 만드는 독특한 조리 방식으로 유명하며, 특히 버섯 리조또는 향이 깊어 전 세계적으로 인기 있는 메뉴입니다.</p>
-</div>
-<div class="info-item">
-<span class="info-label">🍳 3줄 요약 레시피</span>
-<div class="recipe-step"><span class="step-num">1</span><span class="step-text">양파와 버섯을 버터에 충분히 볶아 향을 낸다.</span></div>
-<div class="recipe-step"><span class="step-num">2</span><span class="step-text">아보리오 쌀을 넣고 스톡을 나누어 흡수시키며 저어준다.</span></div>
-<div class="recipe-step"><span class="step-num">3</span><span class="step-text">치즈와 버터를 넣어 크리미하게 마무리한다.</span></div>
-</div>
-<div class="info-item">
-<span class="info-label">📜 설명</span>
-<p>버섯 리조또는 깊은 향의 버섯과 고소한 치즈가 조화를 이루는 이탈리아 전통 요리입니다. 스톡을 조금씩 흡수시키며 조리하는 과정에서 전분이 자연스럽게 풀려 나와 진한 크리미함을 만들어냅니다.</p>
-</div>
+
+<!-- 리조또 이미지 (예시 base64) -->
+<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg">
+
+<p>
+리조또는 이탈리아 북부에서 시작된 쌀 기반 요리로, 육수(Brodo)를 조금씩 넣어가며 천천히 끓여내는 방식이 특징입니다.
+일반적인 밥보다 훨씬 부드럽고 크리미한 질감을 가지며, 버터, 화이트 와인, 파르미지아노 치즈를 통해 깊고 진한 풍미를 냅니다.
+또한 버섯, 해산물, 트러플, 채소 등 다양한 재료를 활용해 지역마다 다른 스타일로 발전했습니다.
+</p>
+
+<p>
+리조또는 단순한 쌀요리가 아니라 ‘시간과 정성’이 들어가는 요리로 평가됩니다. 끊임없이 저어주며 쌀의 전분을 자연스럽게 풀어내야 하기 때문에,
+요리사가 직접 정성을 들여야만 완성도 높은 크리미 질감을 얻을 수 있습니다.
+이 점에서 이탈리아 미식 문화의 정교한 요리 철학을 잘 보여주는 대표적인 요리입니다.
+</p>
+
 </div>
 </article>
 </main>
 </div>
-<footer><p>&copy; 2025 Global Bites</p></footer>
-<script>
-function updateClock(){
-const d = new Date();
-document.getElementById('current-date').textContent = d.toLocaleDateString();
-document.getElementById('current-time').textContent = d.toLocaleTimeString();
-}
-setInterval(updateClock,1000);
-updateClock();
-</script>
+
+<script src="clock.js"></script>
 </body>
 </html>
