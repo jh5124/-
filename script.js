@@ -151,7 +151,7 @@ function toggleLike() {
         btn.classList.add('liked');
         // 숫자 1 증가
         const newCount = parseInt(countSpan.innerText) + 1;
-        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${newCount}</span>`;
+        btn.innerHTML = `❤️<span id="like-count">${newCount}</span>`;
         btn.style.background = '#ff6b6b';
         btn.style.color = 'white';
         
@@ -227,7 +227,7 @@ function loadLikeStatus() {
     if (isLiked === 'yes') {
         // 저장된 게 있으면 '좋아요' 상태로 변경
         btn.classList.add('liked');
-        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${parseInt(countSpan.innerText) + 1}</span>`;
+        btn.innerHTML = `❤️<span id="like-count">${parseInt(countSpan.innerText) + 1}</span>`;
         btn.style.background = '#ff6b6b';
         btn.style.color = 'white';
     }
@@ -251,7 +251,7 @@ function toggleLike() {
     } else {
         // [좋아요]
         btn.classList.add('liked');
-        btn.innerHTML = `❤️ 맛있어요! <span id="like-count">${parseInt(countSpan.innerText) + 1}</span>`;
+        btn.innerHTML = `❤️<span id="like-count">${parseInt(countSpan.innerText) + 1}</span>`;
         btn.style.background = '#ff6b6b';
         btn.style.color = 'white';
         
