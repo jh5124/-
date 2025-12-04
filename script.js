@@ -278,3 +278,26 @@ function initScrollAnimation() {
     const targetElements = document.querySelectorAll('.scroll-animate');
     targetElements.forEach(el => observer.observe(el));
 }
+
+// --- ⬆️ 맨 위로 가기 버튼 기능 ---
+
+// 1. 스크롤 감지 (조금 내리면 버튼 등장)
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    const topBtn = document.getElementById("top-btn");
+    if (topBtn) {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block"; // 300px 이상 내리면 보임
+        } else {
+            topBtn.style.display = "none";  // 아니면 숨김
+        }
+    }
+}
+
+// 2. 버튼 누르면 위로 슝~
+function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}

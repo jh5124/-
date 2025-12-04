@@ -37,6 +37,11 @@
                     <li>▪ 주제: 한국의 맛</li>
                 </ul>
             </div>
+            <div class="random-menu-widget" style="margin-top: 20px; background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: #333;">🎲 오늘 뭐 먹지?</h4>
+                <div id="menu-result" style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin: 15px 0; min-height: 30px;">❓</div>
+                <button onclick="pickMenu()" style="background: #333; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">메뉴 뽑기</button>
+            </div>
             </aside>
 
         <main class="main-content">
@@ -65,11 +70,21 @@
                         <p>건강과 맛을 동시에 잡은 <br>완벽한 영양 밸런스 비빔밥.</p>
                     </div>
                 </a>
-
+                
             </div>
         </main>
     </div>
+<div style="text-align: center; margin: 40px 0; display: flex; justify-content: center; gap: 10px;">
+    
+    <button onclick="shareLink()" style="background: #333; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer;">
+        🔗 친구에게 공유하기
+    </button>
 
+    <button onclick="window.print()" style="background: white; border: 1px solid #333; color: #333; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+        🖨️ 레시피 인쇄
+    </button>
+
+</div>
     <footer>
         <div class="container">
             <p>&copy; 2025 Global Bites 4조 Team Project.</p>
