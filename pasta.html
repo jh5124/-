@@ -1,74 +1,123 @@
-<!-- UPDATED pasta.html with richer description -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>파스타 - Global Bites</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파스타 - Global Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
-<div class="container">
-<h1 class="logo">🌍 Global Bites</h1>
-<nav>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="italy.html" class="active">이탈리아 요리</a></li>
-</ul>
-</nav>
-</div>
+    <div class="container">
+        <h1 class="logo">🌏 Global Bites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html" class="active">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html">태국</a></li>
+                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+            </ul>
+        </nav>
+    </div>
 </header>
+
 <div class="container content-wrapper">
-<aside class="sidebar">
-<div class="profile-box">
-<img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
-<h3>Global Bites</h3>
-<p>4조 Team Project</p>
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+            <h3>Global Bites</h3>
+            <p>4조 Team Project</p>
+            <ul class="profile-info">
+                <li>▪ 작성자: 박찬빈</li>
+                <li>▪ 주제: 이탈리아 요리</li>
+            </ul>
+        </div>
+
+        <div class="clock-widget">
+            <div id="current-date">0000.00.00 (월)</div>
+            <div id="current-time">00:00:00</div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <a href="italy.html" class="back-link">← 메뉴판으로 돌아가기</a>
+
+        <article class="dish-card">
+            <div class="dish-header">
+                <h3>1. 봉골레 파스타 (Vongole Pasta)</h3>
+            </div>
+
+            <div class="dish-body">
+                <img src="https://i.namu.wiki/i/ZjPcoAhi7qU-bg7Ie_DkX-RUO7p4lAT8-1UyCiEHfaC6sczF-oq7JbdwwfBxscwJEMlq07kkltp9F6Jr9oTZfw.webp" class="dish-img">
+
+                <div class="dish-stats">
+                    <div class="stat-item">풍미 <span class="stat-value">🧄🧄🧄🧄</span></div>
+                    <div class="stat-item">맛 타입 <span class="stat-value">🧂 깔끔 + 감칠맛</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
+                </div>
+
+                <div class="like-container" style="text-align:center; margin:20px 0;">
+                    <button id="like-btn" data-name="pasta" onclick="toggleLike()"
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">102</span>
+                    </button>
+                </div>
+
+                <div class="fun-fact-box">
+                    <span class="fun-title">💡 파스타 trivia</span>
+                    <p>
+                        봉골레 파스타는 이탈리아 남부에서 유래했으며, 조개에서 나오는 자연스러운 바다 향이 특징이에요.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">📜 특징과 유래</span>
+                    <p class="info-content">
+                        신선한 바지락과 화이트와인을 사용해 깊은 감칠맛을 낸 이탈리아 정통 오일 파스타입니다.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🍳 3줄 요약 레시피</span>
+                    <div class="recipe-step"><span class="step-num">1.</span> 올리브유에 마늘을 볶아 향을 낸다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 바지락과 화이트와인을 넣고 충분히 끓인다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 삶은 파스타 면과 버무려 완성.</div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🗺️ 봉골레 파스타 맛집</span>
+                    <a href="https://map.naver.com/v5/search/파스타" target="_blank" class="store-tag">📍 파스타 맛집 검색하기</a>
+                </div>
+            </div>
+        </article>
+    </main>
 </div>
-<div class="clock-widget">
-<div id="current-date"></div>
-<div id="current-time"></div>
+
+<!-- 댓글 섹션 -->
+<div class="container" style="margin-top:40px; margin-bottom:80px;">
+    <h3>💬 댓글 남기기</h3>
+    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
+        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
+        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+            댓글 작성
+        </button>
+    </div>
+
+    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+        <p style="color:#888;">작성된 댓글이 없습니다.</p>
+    </div>
 </div>
-</aside>
-<main class="main-content">
-<a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
-<article class="dish-card">
-<div class="dish-header"><h3>🍝 까르보나라 (Carbonara)</h3></div>
-<div class="dish-body">
-<img src="data:image/jpeg;base64,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" class="dish-img" alt="까르보나라">
-<div class="dish-stats">
-<div class="stat-item">크리미함 <span class="stat-value">🧀🧀🧀</span></div>
-<div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
-<div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
-</div>
-<div class="fun-fact-box">
-<span class="fun-title">💡 잠깐! 이거 아셨나요?</span>
-<p>정통 로마식 카르보나라는 크림을 절대 사용하지 않습니다. 달걀 노른자, 페코리노 치즈, 그리고 판체타 또는 구안치알레의 기름만으로 소스가 만들어집니다.</p>
-</div>
-<div class="info-item">
-<span class="info-label">🍳 3줄 요약 레시피</span>
-<div class="recipe-step"><span class="step-num">1</span><span class="step-text">스파게티를 알덴테로 삶는다.</span></div>
-<div class="recipe-step"><span class="step-num">2</span><span class="step-text">판체타를 볶아 풍미를 낸다.</span></div>
-<div class="recipe-step"><span class="step-num">3</span><span class="step-text">달걀 노른자+치즈와 함께 불을 끄고 빠르게 섞는다.</span></div>
-</div>
-<div class="info-item">
-<span class="info-label">📜 유래와 설명</span>
-<p>카르보나라는 이탈리아 로마 지역에서 유래한 대표 파스타로, 노동자들이 쉽게 만들기 위해 탄생한 요리라는 설이 있습니다. 단순한 재료로 깊고 고소한 맛을 낼 수 있는 것이 가장 큰 특징입니다.</p>
-</div>
-</div>
-</article>
-</main>
-</div>
-<footer><p>&copy; 2025 Global Bites</p></footer>
-<script>
-function updateClock(){
-const d = new Date();
-document.getElementById('current-date').textContent = d.toLocaleDateString();
-document.getElementById('current-time').textContent = d.toLocaleTimeString();
-}
-setInterval(updateClock,1000);
-updateClock();
-</script>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+    </div>
+</footer>
+
+<button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
+<script src="script.js"></script>
 </body>
 </html>
