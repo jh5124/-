@@ -1,71 +1,125 @@
-<!-- UPDATED pizza.html with rich detail -->
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>피자 - Global Bites</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피자 - Global Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
-<div class="container">
-<h1 class="logo">🌍 Global Bites</h1>
-<nav>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="italy.html" class="active">이탈리아 요리</a></li>
-</ul>
-</nav>
-</div>
+    <div class="container">
+        <h1 class="logo">🌏 Global Bites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html" class="active">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html">태국</a></li>
+                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+            </ul>
+        </nav>
+    </div>
 </header>
+
 <div class="container content-wrapper">
-<aside class="sidebar">
-<div class="profile-box">
-<img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
-<h3>Global Bites</h3>
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+            <h3>Global Bites</h3>
+            <p>4조 Team Project</p>
+            <ul class="profile-info">
+                <li>▪ 작성자: 박찬빈</li>
+                <li>▪ 주제: 이탈리아 요리</li>
+            </ul>
+        </div>
+
+        <div class="clock-widget">
+            <div id="current-date">0000.00.00 (월)</div>
+            <div id="current-time">00:00:00</div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <a href="italy.html" class="back-link">← 메뉴판으로 돌아가기</a>
+
+        <article class="dish-card">
+            <div class="dish-header">
+                <h3>2. 마르게리타 피자 (Margherita Pizza)</h3>
+            </div>
+
+            <div class="dish-body">
+                <img src="https://i.namu.wiki/i/ooNfzSamSs3pEKvhbsHCDCzETyQ0LxMCkdvD0agv-rDhP6dQcZ_DSjaxYbWT6vPX4toElbq5QMNL_5xMP7CVREd7U3D8v0dWpnc2JifkgpJV_FS4yWT8EMoeN0hCSexeMWAYq-gZf8ier_H_w9zIMw.webp" class="dish-img">
+
+                <div class="dish-stats">
+                    <div class="stat-item">고소함 <span class="stat-value">🧈🧈🧈🧈🧈</span></div>
+                    <div class="stat-item">맛 타입 <span class="stat-value">🍅 담백 + 고소</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 15~20분</span></div>
+                </div>
+
+                <div class="like-container" style="text-align:center; margin:20px 0;">
+                    <button id="like-btn" data-name="pizza" onclick="toggleLike()"
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">128</span>
+                    </button>
+                </div>
+
+                <div class="fun-fact-box">
+                    <span class="fun-title">💡 피자 trivia</span>
+                    <p>
+                        마르게리타 피자는 이탈리아 국기 색(빨강·하양·초록)을 상징하여 만들어졌다는 설이 유명해요!
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">📜 특징과 유래</span>
+                    <p class="info-content">
+                        신선한 토마토 소스, 모차렐라 치즈, 바질 잎으로만 만드는 이탈리아 전통 피자로, 단순하지만 깊은 풍미를 자랑합니다.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🍳 3줄 요약 레시피</span>
+                    <div class="recipe-step"><span class="step-num">1.</span> 피자 도우 위에 토마토 소스를 바른다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 모차렐라 치즈와 바질을 올린다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 오븐에서 바삭하게 구워 완성.</div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🗺️ 마르게리타 피자 맛집</span>
+                    <a href="https://map.naver.com/v5/search/피자" target="_blank" class="store-tag">📍 피자 맛집 검색하기</a>
+                </div>
+            </div>
+        </article>
+    </main>
 </div>
-<div class="clock-widget">
-<div id="current-date"></div>
-<div id="current-time"></div>
+
+<!-- 댓글 섹션 -->
+<div class="container" style="margin-top:40px; margin-bottom:80px;">
+    <h3>💬 댓글 남기기</h3>
+    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
+        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
+        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+            댓글 작성
+        </button>
+    </div>
+
+    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+        <p style="color:#888;">작성된 댓글이 없습니다.</p>
+    </div>
 </div>
-</aside>
-<main class="main-content">
-<a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
-<article class="dish-card">
-<div class="dish-header"><h3>🍕 마르게리타 (Margherita)</h3></div>
-<div class="dish-body">
-<img src="https://i.namu.wiki/i/ooNfzSamSs3pEKvhbsHCDCzETyQ0LxMCkdvD0agv-rDhP6dQcZ_DSjaxYbWT6vPX4toElbq5QMNL_5xMP7CVREd7U3D8v0dWpnc2JifkgpJV_FS4yWT8EMoeN0hCSexeMWAYq-gZf8ier_H_w9zIMw.webp" class="dish-img">
-<div class="dish-stats">
-<div class="stat-item">치즈맛 <span class="stat-value">🧀🧀🧀🧀</span></div>
-<div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
-<div class="stat-item">조리시간 <span class="stat-value">⏰ 1시간</span></div>
-</div>
-<div class="fun-fact-box">
-<span class="fun-title">💡 재미있는 사실</span>
-<p>마르게리타 피자는 1889년 이탈리아 왕비 마르게리타를 기념해 만들어졌으며, 토마토·모차렐라·바질의 색은 이탈리아 국기를 상징합니다.</p>
-</div>
-<div class="info-item">
-<span class="info-label">🍳 3줄 요약 레시피</span>
-<div class="recipe-step"><span class="step-num">1</span><span class="step-text">강력분 반죽을 30분 이상 발효.</span></div>
-<div class="recipe-step"><span class="step-num">2</span><span class="step-text">토마토 소스와 모차렐라 토핑.</span></div>
-<div class="recipe-step"><span class="step-num">3</span><span class="step-text">250℃ 이상의 높은 온도에서 단시간 구움.</span></div>
-</div>
-<div class="info-item">
-<span class="info-label">📜 설명</span>
-<p>마르게리타는 피자의 기본 형태로, 담백한 토마토 베이스와 신선한 모차렐라의 조화를 즐길 수 있습니다. 간단하지만 피자의 본질을 가장 잘 보여주는 메뉴입니다.</p>
-</div>
-</div>
-</article>
-</main>
-</div>
-<footer><p>&copy; 2025 Global Bites</p></footer>
-<script>
-function updateClock(){
-const d = new Date();
-document.getElementById('current-date').textContent = d.toLocaleDateString();
-document.getElementById('current-time').textContent = d.toLocaleTimeString();
-}
-setInterval(updateClock,1000);
-updateClock();
-</script>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+    </div>
+</footer>
+
+<button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
+<script src="script.js"></script>
+
 </body>
 </html>
+ 

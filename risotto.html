@@ -1,94 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!-- UPDATED risotto.html with same style as pizza.html -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>리조또 - Global Bites</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리조또 - Global Bites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
 <header>
-<div class="container">
-<h1 class="logo">🌍 Global Bites</h1>
-<nav>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="italy.html" class="active">이탈리아 요리</a></li>
-</ul>
-</nav>
-</div>
+    <div class="container">
+        <h1 class="logo">🌏 Global Bites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html" class="active">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html">태국</a></li>
+                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <div class="container content-wrapper">
-<aside class="sidebar">
-<div class="profile-box">
-<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" class="profile-img">
-<h3>Global Bites</h3>
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+            <h3>Global Bites</h3>
+            <p>4조 Team Project</p>
+            <ul class="profile-info">
+                <li>▪ 작성자: 박찬빈</li>
+                <li>▪ 주제: 이탈리아 요리</li>
+            </ul>
+        </div>
+
+        <div class="clock-widget">
+            <div id="current-date">0000.00.00 (월)</div>
+            <div id="current-time">00:00:00</div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <a href="italy.html" class="back-link">← 메뉴판으로 돌아가기</a>
+
+        <article class="dish-card">
+            <div class="dish-header">
+                <h3>3. 크림 리조또 (Cream Risotto)</h3>
+            </div>
+
+            <div class="dish-body">
+                <img src="https://www.okitchen.co.kr/pds/upfile/2020-08-23_214060951[20].jpg" class="dish-img">
+
+                <div class="dish-stats">
+                    <div class="stat-item">고소함 <span class="stat-value">🧈🧈🧈🧈</span></div>
+                    <div class="stat-item">맛 타입 <span class="stat-value">🥛 부드러움 + 풍미</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 40분</span></div>
+                </div>
+
+                <div class="like-container" style="text-align:center; margin:20px 0;">
+                    <button id="like-btn" data-name="risotto" onclick="toggleLike()"
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">91</span>
+                    </button>
+                </div>
+
+                <div class="fun-fact-box">
+                    <span class="fun-title">💡 리조또 trivia</span>
+                    <p>
+                        리조또는 북부 이탈리아에서 시작된 음식으로, 쌀에 육수를 조금씩 붓고 흡수시키는 독특한 조리법이 핵심이에요!
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">📜 특징과 유래</span>
+                    <p class="info-content">
+                        크림과 치즈가 조화를 이루는 대표적인 이탈리아식 쌀 요리로, 쫀득하고 고소한 식감이 매력입니다.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🍳 3줄 요약 레시피</span>
+                    <div class="recipe-step"><span class="step-num">1.</span> 양파·버터를 볶아 향을 낸다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 쌀에 육수를 여러 번 나눠 넣어가며 졸인다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 크림과 치즈를 넣어 마무리.</div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🗺️ 리조또 맛집</span>
+                    <a href="https://map.naver.com/v5/search/리조또" target="_blank" class="store-tag">📍 리조또 맛집 검색하기</a>
+                </div>
+            </div>
+        </article>
+    </main>
 </div>
 
-<div class="clock-widget">
-<div id="current-date"></div>
-<div id="current-time"></div>
-</div>
-</aside>
+<!-- 댓글 섹션 -->
+<div class="container" style="margin-top:40px; margin-bottom:80px;">
+    <h3>💬 댓글 남기기</h3>
+    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
+        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
+        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+            댓글 작성
+        </button>
+    </div>
 
-<main class="main-content">
-<a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
-
-<article class="dish-card">
-
-<div class="dish-header">
-<h3>🍚 크림 리조또 (Cream Risotto)</h3>
-</div>
-
-<div class="dish-body">
-
-<!-- 이미지 변경 가능 -->
-<img src="https://static.wtable.co.kr/image-resize/production/service/recipe/998/16x9/03164d04-0c01-4586-9ab8-8b4613294031.jpg" class="dish-img">
-
-<div class="dish-stats">
-<div class="stat-item">고소함 <span class="stat-value">🧈🧈🧈🧈</span></div>
-<div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
-<div class="stat-item">조리시간 <span class="stat-value">⏰ 40분</span></div>
-</div>
-
-<div class="fun-fact-box">
-<span class="fun-title">💡 재미있는 사실</span>
-<p>리조또는 북부 이탈리아에서 유래한 전통 쌀요리로, 쌀에 육수를 천천히 흡수시키며 끈기 있는 식감을 만드는 조리법이 특징입니다.</p>
-</div>
-
-<div class="info-item">
-<span class="info-label">🍳 3줄 요약 레시피</span>
-<div class="recipe-step"><span class="step-num">1</span><span class="step-text">양파와 버터를 볶아 향을 내고 쌀을 코팅.</span></div>
-<div class="recipe-step"><span class="step-num">2</span><span class="step-text">육수를 여러 번 나눠 넣으며 흡수될 때까지 끓이기.</span></div>
-<div class="recipe-step"><span class="step-num">3</span><span class="step-text">생크림·치즈를 넣어 마무리.</span></div>
-</div>
-
-<div class="info-item">
-<span class="info-label">📜 설명</span>
-<p>크림 리조또는 부드럽고 고소한 풍미가 특징으로, 쌀알 하나하나에 깊은 맛이 배어 있습니다. 진한 크림과 치즈의 조화로 누구나 좋아하는 이탈리아식 정통 홈메이드 요리입니다.</p>
-</div>
-
-</div>
-</article>
-</main>
+    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+        <p style="color:#888;">작성된 댓글이 없습니다.</p>
+    </div>
 </div>
 
 <footer>
-<p>&copy; 2025 Global Bites</p>
+    <div class="container">
+        <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+    </div>
 </footer>
 
-<script>
-function updateClock(){
-const d = new Date();
-document.getElementById('current-date').textContent = d.toLocaleDateString();
-document.getElementById('current-time').textContent = d.toLocaleTimeString();
-}
-setInterval(updateClock,1000);
-updateClock();
-</script>
+<button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
+<script src="script.js"></script>
 
 </body>
 </html>
