@@ -9,135 +9,118 @@
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1 class="logo">🌏 Global Bites</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="italy.html">이탈리아 요리</a></li>
-                    <li><a href="korea.html">한국 요리</a></li>
-                    <li><a href="thailand.html" class="active" style="color:#6bbf5f;">태국 요리</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <h1 class="logo">🌏 Global Bites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html" class="active">태국</a></li>
+                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <div class="container content-wrapper">
-        <aside class="sidebar">
-            <div class="profile-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
-                <h3>Global Bites</h3>
-                <p>4조 Team Project</p>
-                <ul class="profile-info">
-                    <li>▪ 작성자: 전원영</li>
-                    <li>▪ 주제: 태국의 맛</li>
-                </ul>
+<div class="container content-wrapper">
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+            <h3>Global Bites</h3>
+            <p>4조 Team Project</p>
+            <ul class="profile-info">
+                <li>▪ 작성자: 전원영</li>
+                <li>▪ 주제: 태국의 맛</li>
+            </ul>
+        </div>
+        <div class="clock-widget">
+            <div id="current-date">0000.00.00 (월)</div>
+            <div id="current-time">00:00:00</div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
+
+        <article class="dish-card">
+            <div class="dish-header">
+                <h3>3. 그린커리 (Green Curry)</h3>
             </div>
 
-            <div class="clock-widget">
-                <div id="current-date">0000.00.00 (월)</div>
-                <div id="current-time">00:00:00</div>
+            <div class="dish-body">
+                <img src="https://i.namu.wiki/i/kF8E3Q1yoaRDGN5fBfgehmR5hM9_4Qf-sSJDd0QkMJJwAvk1VnUesDAIu5VGvUkP7NB_u1DbF-Ia9hC51MMrFa_qMyCktH63F-KtgxrcqXygIRIPc0csmCtSuI2QHUaWtCckdoXH67eKaMldeI_jkw.webp" 
+                     class="dish-img" alt="그린커리">
+
+                <div class="dish-stats">
+                    <div class="stat-item">향 타입 <span class="stat-value">🌿 허브 + 코코넛</span></div>
+                    <div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 30분</span></div>
+                </div>
+
+                <div class="like-container" style="text-align:center; margin:20px 0;">
+                    <button id="like-btn" data-name="greencurry" onclick="toggleLike()"
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">73</span>
+                    </button>
+                </div>
+
+                <div class="fun-fact-box">
+                    <span class="fun-title">💡 그린커리 trivia</span>
+                    <p style="font-size:0.9rem;">
+                        그린커리는 태국 카레 중 가장 향이 진하고, 허브·고추·코코넛밀크의 조화로  
+                        ‘태국 특유의 향’을 가장 강하게 느낄 수 있는 메뉴예요!
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">📜 특징과 유래</span>
+                    <p class="info-content">
+                        그린커리는 태국 남부·중부 지역에서 발전한 요리로, 코코넛밀크의 부드러움과  
+                        그린페이스트의 매콤함이 어우러진 깊은 풍미가 특징입니다.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🍳 3줄 요약 레시피</span>
+                    <div class="recipe-step"><span class="step-num">1.</span> 그린커리 페이스트 + 코코넛밀크를 볶아 향을 낸다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 닭고기·가지·피망을 넣고 졸인다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 생바질을 올려 향 완성!</div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🗺️ 그린커리 맛집 네이버 지도에서 찾기</span>
+                    <a href="https://naver.me/x2jQJH8F" target="_blank" class="store-tag">📍 팟타이로얄</a>
+                </div>
             </div>
-        </aside>
+        </article>
+    </main>
+</div>
 
-        <main class="main-content">
-            <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
-
-            <article class="dish-card">
-                <div class="dish-header">
-                    <h3>3. 그린커리 (Green Curry)</h3>
-                </div>
-
-                <div class="dish-body">
-
-                    <!-- 그린커리 이미지 -->
-                    <img src="https://i.namu.wiki/i/kF8E3Q1yoaRDGN5fBfgehmR5hM9_4Qf-sSJDd0QkMJJwAvk1VnUesDAIu5VGvUkP7NB_u1DbF-Ia9hC51MMrFa_qMyCktH63F-KtgxrcqXygIRIPc0csmCtSuI2QHUaWtCckdoXH67eKaMldeI_jkw.webp" class="dish-img" alt="그린커리">
-
-                    <!-- 간단 스탯 -->
-                    <div class="dish-stats">
-                        <div class="stat-item">맛 타입 <span class="stat-value">🌶️ 부드러움 + 고소함 + 매콤</span></div>
-                        <div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
-                        <div class="stat-item">조리시간 <span class="stat-value">⏰ 30분</span></div>
-                    </div>
-
-                    <!-- 재미 정보 -->
-                    <div class="fun-fact-box">
-                        <span class="fun-title">💡 알고 있나요?</span>
-                        <p style="font-size: 0.9rem; margin:0;">
-                            그린커리의 ‘초록색’은 고춧잎이나 고수, 청양류 고추에서 나오는 색으로  
-                            태국 음식 중에서 향이 가장 강하고 고소한 맛을 내는 커리예요.  
-                            특히 코코넛 밀크가 들어가서 부드럽고 깊은 풍미가 납니다!
-                        </p>
-                    </div>
-
-                    <!-- 설명 -->
-                    <div class="info-item">
-                        <span class="info-label">📜 유래와 특징</span>
-                        <p class="info-content">
-                            그린커리는 태국 남부 지역에서 자주 먹던 향신료 기반 커리로,  
-                            코코넛 밀크, 그린커리 페이스트, 닭고기 또는 해산물이 주 재료예요.  
-                            매운맛보다는 고소하고 향긋한 맛이 강해 외국인도 가장 좋아하는  
-                            태국 음식 중 하나로 꼽힙니다.
-                        </p>
-                    </div>
-
-                    <!-- 3줄 레시피 -->
-                    <div class="info-item">
-                        <span class="info-label">🍳 3줄 요약 레시피</span>
-                        <div class="recipe-step">
-                            <span class="step-num">1</span>
-                            <span class="step-text">코코넛 밀크를 먼저 끓여 향을 내고 그린커리 페이스트를 볶아 풍미를 올린다.</span>
-                        </div>
-                        <div class="recipe-step">
-                            <span class="step-num">2</span>
-                            <span class="step-text">닭고기와 가지, 피망 등 원하는 채소를 넣고 부드럽게 끓인다.</span>
-                        </div>
-                        <div class="recipe-step">
-                            <span class="step-num">3</span>
-                            <span class="step-text">생바질과 피시소스, 설탕으로 간을 맞추면 깊은 커리 맛 완성!</span>
-                        </div>
-                    </div>
-
-                    <!-- 맛집 -->
-                    <div class="info-item">
-                        <span class="info-label">🗺️ 그린커리 맛집 네이버 지도에서 찾기</span>
-                        <a href="https://naver.me/x2jQJH8F" target="_blank" class="store-tag">📍 팟타이로얄</a>
-                    </div>
-
-                </div>
-            </article>
-        </main>
+<!-- 댓글 섹션 -->
+<div class="container" style="margin-top:40px; margin-bottom:80px;">
+    <h3>💬 댓글 남기기</h3>
+    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
+        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
+        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+            댓글 작성
+        </button>
     </div>
 
-
-    <!-- 💬 댓글 작성 섹션 (푸터 위에 넣기) -->
-    <div class="container" style="margin-top: 40px; margin-bottom: 80px;">
-        <h3 style="margin-bottom: 15px;">💬 댓글 남기기</h3>
-
-        <!-- 댓글 입력창 -->
-        <div style="background:#fff; padding: 15px; border:1px solid #ddd; border-radius:8px; margin-bottom:15px;">
-            <textarea id="comment-input"
-                      placeholder="댓글을 입력하세요..."
-                      style="width:100%; height:80px; padding:10px; border-radius:6px; border:1px solid #ccc; resize:none;"></textarea>
-            <button onclick="addComment()"
-                    style="margin-top:10px; background:#6bbf5f; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;">
-                댓글 작성
-            </button>
-        </div>
-
-        <!-- 댓글 목록 -->
-        <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd;">
-            <p style="color:#888;">작성된 댓글이 없습니다.</p>
-        </div>
+    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+        <p style="color:#888;">작성된 댓글이 없습니다.</p>
     </div>
+</div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Global Bites 4조 Team Project.</p>
-        </div>
-    </footer>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
+<script src="script.js"></script>
 </body>
 </html>
+
