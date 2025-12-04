@@ -1,0 +1,74 @@
+<!-- UPDATED pasta.html with richer description -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파스타 - Global Bites</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1 class="logo">🌍 Global Bites</h1>
+<nav>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="italy.html" class="active">이탈리아 요리</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="container content-wrapper">
+<aside class="sidebar">
+<div class="profile-box">
+<img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+<h3>Global Bites</h3>
+<p>4조 Team Project</p>
+</div>
+<div class="clock-widget">
+<div id="current-date"></div>
+<div id="current-time"></div>
+</div>
+</aside>
+<main class="main-content">
+<a href="italy.html" class="back-link">← 이탈리아 메뉴로 돌아가기</a>
+<article class="dish-card">
+<div class="dish-header"><h3>🍝 까르보나라 (Carbonara)</h3></div>
+<div class="dish-body">
+<img src="https://static.wtable.co.kr/image/production/service/recipe/1974/e3d221c1-c303-44b1-8540-36d1a7d64452.jpg?size=800x800" class="dish-img" alt="까르보나라">
+<div class="dish-stats">
+<div class="stat-item">크리미함 <span class="stat-value">🧀🧀🧀</span></div>
+<div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
+<div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
+</div>
+<div class="fun-fact-box">
+<span class="fun-title">💡 잠깐! 이거 아셨나요?</span>
+<p>정통 로마식 카르보나라는 크림을 절대 사용하지 않습니다. 달걀 노른자, 페코리노 치즈, 그리고 판체타 또는 구안치알레의 기름만으로 소스가 만들어집니다.</p>
+</div>
+<div class="info-item">
+<span class="info-label">🍳 3줄 요약 레시피</span>
+<div class="recipe-step"><span class="step-num">1</span><span class="step-text">스파게티를 알덴테로 삶는다.</span></div>
+<div class="recipe-step"><span class="step-num">2</span><span class="step-text">판체타를 볶아 풍미를 낸다.</span></div>
+<div class="recipe-step"><span class="step-num">3</span><span class="step-text">달걀 노른자+치즈와 함께 불을 끄고 빠르게 섞는다.</span></div>
+</div>
+<div class="info-item">
+<span class="info-label">📜 유래와 설명</span>
+<p>카르보나라는 이탈리아 로마 지역에서 유래한 대표 파스타로, 노동자들이 쉽게 만들기 위해 탄생한 요리라는 설이 있습니다. 단순한 재료로 깊고 고소한 맛을 낼 수 있는 것이 가장 큰 특징입니다.</p>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer><p>&copy; 2025 Global Bites</p></footer>
+<script>
+function updateClock(){
+const d = new Date();
+document.getElementById('current-date').textContent = d.toLocaleDateString();
+document.getElementById('current-time').textContent = d.toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+</body>
+</html>
