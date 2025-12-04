@@ -9,131 +9,116 @@
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1 class="logo">🌏 Global Bites</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="italy.html">이탈리아 요리</a></li>
-                    <li><a href="korea.html">한국 요리</a></li>
-                    <li><a href="thailand.html" class="active" style="color:#ff6b6b;">태국 요리</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="container">
+        <h1 class="logo">🌏 Global Bites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="italy.html">이탈리아</a></li>
+                <li><a href="korea.html">한국</a></li>
+                <li><a href="thailand.html" class="active">태국</a></li>
+                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container content-wrapper">
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
+            <h3>Global Bites</h3>
+            <p>4조 Team Project</p>
+            <ul class="profile-info">
+                <li>▪ 작성자: 전원영</li>
+                <li>▪ 주제: 태국의 맛</li>
+            </ul>
         </div>
-    </header>
+        <div class="clock-widget">
+            <div id="current-date">0000.00.00 (월)</div>
+            <div id="current-time">00:00:00</div>
+        </div>
+    </aside>
 
-    <div class="container content-wrapper">
-        <aside class="sidebar">
-            <div class="profile-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
-                <h3>Global Bites</h3>
-                <p>4조 Team Project</p>
-                <ul class="profile-info">
-                    <li>▪ 작성자: 전원영</li>
-                    <li>▪ 주제: 태국의 맛</li>
-                </ul>
+    <main class="main-content">
+        <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
+
+        <article class="dish-card">
+            <div class="dish-header">
+                <h3>2. 똠양꿍 (Tom Yum Goong)</h3>
             </div>
-            <div class="clock-widget">
-                <div id="current-date">0000.00.00 (월)</div>
-                <div id="current-time">00:00:00</div>
+
+            <div class="dish-body">
+                <img src="https://i.namu.wiki/i/aRh322aVaP5PAfqOmcaChG0ujd4-E8pzCqxM9CAsQpXErxqbW4AVXFoqkCR6CEINuk5_P1n3V5_9sUgnrd3FjfWuegFj8gpTc1j2BHrBGMZR49q4ytrhjRT-JRgjyzOE5WuIOJY-P0aZzB3ijbD-uA.webp" class="dish-img" alt="똠양꿍">
+
+                <div class="dish-stats">
+                    <div class="stat-item">맵기 <span class="stat-value">🌶️🌶️🌶️🌶️</span></div>
+                    <div class="stat-item">맛 타입 <span class="stat-value">🍋 새콤 + 매콤</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 25분</span></div>
+                </div>
+
+                <div class="like-container" style="text-align:center; margin:20px 0;">
+                    <button id="like-btn" data-name="tomyum" onclick="toggleLike()"
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">84</span>
+                    </button>
+                </div>
+
+                <div class="fun-fact-box">
+                    <span class="fun-title">💡 똠양꿍 trivia</span>
+                    <p style="font-size:0.9rem;">
+                        똠양꿍은 태국의 국물요리 중에서도 세계 3대 수프에 꼽히며,  
+                        ‘매콤한 향의 정점’이라 불릴 정도로 향신료의 조화가 뛰어나요!
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">📜 특징과 유래</span>
+                    <p class="info-content">
+                        레몬그라스·라임잎·갈랑가·고추로 향을 내고, 새우를 넣어 끓이는 태국의 대표 수프입니다.  
+                        매콤하면서도 상큼하고, 향신료의 깊은 향이 특징이에요.
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🍳 3줄 요약 레시피</span>
+                    <div class="recipe-step"><span class="step-num">1.</span> 레몬그라스·라임잎·갈랑가를 끓여 향을 우린다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 새우와 버섯을 넣고 칠리 페이스트로 매운맛을 더한다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 라임즙을 짜서 새콤함 완성!</div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🗺️ 태국 똠양꿍 맛집</span>
+                    <a href="https://map.naver.com/v5/search/똠양꿍" target="_blank" class="store-tag">📍 똠양꿍 맛집 검색하기</a>
+                </div>
             </div>
-        </aside>
+        </article>
+    </main>
+</div>
 
-        <main class="main-content">
-            <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
-
-            <article class="dish-card">
-                <div class="dish-header">
-                    <h3>2. 똠양꿍 (Tom Yum Goong)</h3>
-                </div>
-                <div class="dish-body">
-                    <!-- 똠양꿍 이미지 -->
-                    <img src="https://i.namu.wiki/i/aRh322aVaP5PAfqOmcaChG0ujd4-E8pzCqxM9CAsQpXErxqbW4AVXFoqkCR6CEINuk5_P1n3V5_9sUgnrd3FjfWuegFj8gpTc1j2BHrBGMZR49q4ytrhjRT-JRgjyzOE5WuIOJY-P0aZzB3ijbD-uA.webp" class="dish-img" alt="똠양꿍">
-
-                    <!-- 간단 스탯 -->
-                    <div class="dish-stats">
-                        <div class="stat-item">맛 타입 <span class="stat-value">🔥 매콤 + 상큼 + 시원</span></div>
-                        <div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
-                        <div class="stat-item">조리시간 <span class="stat-value">⏰ 25분</span></div>
-                    </div>
-
-                    <!-- 재밌는 정보 -->
-                    <div class="fun-fact-box">
-                        <span class="fun-title">💡 똠양꿍 트리비아</span>
-                        <p style="font-size: 0.9rem; margin:0;">
-                            똠양꿍은 태국뿐 아니라 세계 3대 수프에 꼽힐 정도로 유명한 음식이에요.  
-                            **'똠(tom)'은 끓이다, '얌(yum)'은 섞다, '꿍(goong)'은 새우**라는 뜻이라서  
-                            이름부터가 “새우가 들어간 끓인 샐러드 수프” 느낌이라고 보면 돼요!
-                        </p>
-                    </div>
-
-                    <!-- 유래/설명 -->
-                    <div class="info-item">
-                        <span class="info-label">📜 유래와 특징</span>
-                        <p class="info-content">
-                            똠양꿍은 라임, 레몬그라스, 고수, 칠리 페이스트로 맛을 내는 새우 수프로  
-                            얼큰한 국물이 해장용으로도 유명한 태국 대표 수프입니다.  
-                            고수 향과 상큼한 신맛, 그리고 매운맛이 동시에 느껴져서  
-                            한 번 빠지면 계속 생각나는 중독성 있는 맛을 가지고 있어요.
-                        </p>
-                    </div>
-
-                    <!-- 3줄 레시피 -->
-                    <div class="info-item">
-                        <span class="info-label">🍳 3줄 요약 레시피</span>
-                        <div class="recipe-step">
-                            <span class="step-num">1</span>
-                            <span class="step-text">레몬그라스, 라임잎, 갤랑갈(생강 비슷)을 넣고 육수를 우려 향을 잡아요.</span>
-                        </div>
-                        <div class="recipe-step">
-                            <span class="step-num">2</span>
-                            <span class="step-text">새우와 버섯을 넣고 끓인 뒤, 칠리 페이스트와 피시 소스로 간을 맞춰요.</span>
-                        </div>
-                        <div class="recipe-step">
-                            <span class="step-num">3</span>
-                            <span class="step-text">마지막에 라임즙과 고수, 고추를 넣어 상큼·매콤하게 마무리합니다.</span>
-                        </div>
-                    </div>
-
-                    <!-- 맛집/지도 링크 -->
-                    <div class="info-item">
-                        <span class="info-label">🗺️ 한국에서도 즐기는 똠얌꿍! (클릭)</span>
-                        <a href="https://share.diningcode.com/profile.php?rid=5NL0yj9twB7m" target="_blank" class="store-tag">📍 톡톡누들타이</a>
-                    </div>
-
-                </div>
-            </article>
-        </main>
+<!-- 댓글 섹션 -->
+<div class="container" style="margin-top:40px; margin-bottom:80px;">
+    <h3>💬 댓글 남기기</h3>
+    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
+        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
+        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+            댓글 작성
+        </button>
     </div>
 
-    <!-- 🗨️💬 댓글 섹션 (푸터 위에) -->
-    <div class="container" style="margin-top: 40px; margin-bottom: 80px;">
-        <h3 style="margin-bottom: 15px;">💬 댓글 남기기</h3>
-
-        <!-- 댓글 입력창 -->
-        <div style="background:#fff; padding: 15px; border:1px solid #ddd; border-radius:8px; margin-bottom:15px;">
-            <textarea id="comment-input"
-                      placeholder="댓글을 입력하세요..."
-                      style="width:100%; height:80px; padding:10px; border-radius:6px; border:1px solid #ccc; resize:none;"></textarea>
-            <button onclick="addComment()"
-                    style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;">
-                댓글 작성
-            </button>
-        </div>
-
-        <!-- 댓글 목록 -->
-        <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd;">
-            <p style="color:#888;">작성된 댓글이 없습니다.</p>
-        </div>
+    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+        <p style="color:#888;">작성된 댓글이 없습니다.</p>
     </div>
+</div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Global Bites 4조 Team Project.</p>
-        </div>
-    </footer>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
+<script src="script.js"></script>
 </body>
 </html>
