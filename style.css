@@ -52,7 +52,7 @@ nav a:hover, nav a.active { color: #ff6b6b; }
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* 무료 음식 이미지 */
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -530,3 +530,28 @@ body.dark-mode .fun-fact-box {
     font-weight: bold;
     color: #333;
 }
+
+/* --- ✨ 인트로 애니메이션 (맨 아래 추가) --- */
+
+/* 1. 애니메이션 동작 정의 (아래에서 위로 스르륵) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* 아래쪽 50px 위치에서 시작 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 제자리로 이동하며 선명해짐 */
+    }
+}
+
+/* 2. 애니메이션을 적용할 클래스 */
+.fade-in-text {
+    opacity: 0; /* 처음엔 숨김 */
+    animation: fadeInUp 1.2s ease-out forwards; /* 1.2초 동안 애니메이션 실행 */
+}
+
+/* 3. 시간차 공격 (순서대로 나오게 딜레이 주기) */
+.delay-1 { animation-delay: 0.3s; } /* 제목 */
+.delay-2 { animation-delay: 1.0s; } /* 설명 */
+.delay-3 { animation-delay: 1.8s; } /* 버튼 */
