@@ -86,6 +86,7 @@ window.onload = function() {
     loadTheme();         // 👈 [추가] 저장된 다크 모드 불러오기
     loadLikeStatus(); // 👈 [추가] 좋아요 상태 확인!
     initScrollAnimation(); // 👈 [추가] 애니메이션 감시 시작
+    loadComments();    // 👈 [추가] 저장된 댓글 불러오기!
 };
 
 // 랜덤 메뉴 추천 함수
@@ -101,37 +102,82 @@ function pickMenu() {
         resultBox.innerText = menus[randomIndex];
     }, 500); // 0.5초 뒤에 보여줌
 }
-function addComment() {
-    const input = document.getElementById("comment-input");
+// --- 💬 댓글 기능 (localStorage 연동) ---
+
+// 1. 페이지별 고유 ID 생성 (파일 이름으로 구분)
+const PAGE_ID = window.location.pathname; // 예: '/kimchi.html'
+
+// 2. 댓글 불러오기 (페이지 열릴 때 실행)
+function loadComments() {
     const list = document.getElementById("comment-list");
+    // 저장된 댓글 가져오기 (없으면 빈 배열)
+    const savedComments = JSON.parse(localStorage.getItem("comments_" + PAGE_ID)) || [];
 
-    const text = input.value.trim();
-    if (text === "") {
-        alert("댓글을 입력해주세요!");
-        return;
-    }
-
-    // 첫 댓글일 경우 안내문 삭제
-    if (list.children.length === 1 && list.children[0].tagName === "P") {
+    if (savedComments.length > 0) {
+        // 댓글이 있으면 "작성된 댓글이 없습니다" 안내문 삭제
         list.innerHTML = "";
+        
+        // 저장된 댓글 하나씩 화면에 그리기
+        savedComments.forEach(comment => {
+            displayComment(comment.text, comment.date);
+        });
     }
+}
 
-    // 댓글 요소 생성
+// 3. 댓글 화면에 그리기 (단순 표시용 함수)
+function displayComment(text, date) {
+    const list = document.getElementById("comment-list");
     const commentBox = document.createElement("div");
     commentBox.style.padding = "10px 0";
     commentBox.style.borderBottom = "1px solid #eee";
-
-    const date = new Date().toLocaleString("ko-KR");
 
     commentBox.innerHTML = `
         <p style="margin: 0 0 5px;"><b>익명</b> 
         <span style="color:#aaa; font-size:0.8rem;">(${date})</span></p>
         <p style="margin: 0;">${text}</p>
     `;
-
     list.appendChild(commentBox);
+}
 
+// 4. 댓글 작성 함수 (버튼 클릭 시 실행)
+function addComment() {
+    const input = document.getElementById("comment-input");
+    const list = document.getElementById("comment-list");
+    const text = input.value.trim();
+
+    if (text === "") {
+        alert("댓글을 입력해주세요!");
+        return;
+    }
+
+    // "작성된 댓글이 없습니다" 안내문 삭제 (첫 댓글일 때)
+    if (list.children.length === 1 && list.children[0].tagName === "P") {
+        list.innerHTML = "";
+    }
+
+    // 날짜 생성
+    const date = new Date().toLocaleString("ko-KR");
+
+    // 1) 화면에 보여주기
+    displayComment(text, date);
+
+    // 2) 로컬 스토리지에 저장하기 (핵심!)
+    saveCommentToStorage(text, date);
+
+    // 입력창 비우기
     input.value = "";
+}
+
+// 5. 저장소에 진짜로 저장하는 함수
+function saveCommentToStorage(text, date) {
+    // 기존 댓글 목록 가져오기
+    const savedComments = JSON.parse(localStorage.getItem("comments_" + PAGE_ID)) || [];
+    
+    // 새 댓글 추가
+    savedComments.push({ text: text, date: date });
+    
+    // 다시 저장 (문자열로 변환)
+    localStorage.setItem("comments_" + PAGE_ID, JSON.stringify(savedComments));
 }
 
 
