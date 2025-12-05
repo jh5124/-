@@ -514,3 +514,19 @@ body.dark-mode .fun-fact-box {
     transform: translateY(-5px); /* 살짝 붕 뜨는 효과 */
 }
 
+/* --- 🛒 재료 리스트 스타일 --- */
+.ingredient-list li {
+    transition: all 0.2s;
+}
+
+/* 체크되었을 때 (취소선 + 회색) */
+.ingredient-list li.checked {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+/* 인분 숫자 강조 */
+.amt {
+    font-weight: bold;
+    color: #333;
+}

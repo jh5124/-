@@ -84,9 +84,10 @@ window.onload = function() {
     setInterval(updateClock, 1000); // 시계 작동
 
     loadTheme();         // 👈 [추가] 저장된 다크 모드 불러오기
-    loadLikeStatus(); // 👈 [추가] 좋아요 상태 확인!
+    loadLikeStatus(); // 👈 [추가] 좋아요 상태 확인
     initScrollAnimation(); // 👈 [추가] 애니메이션 감시 시작
-    loadComments();    // 👈 [추가] 저장된 댓글 불러오기!
+    loadComments();    // 👈 [추가] 저장된 댓글 불러오기
+    loadIngredients(); // 👈 [추가] 장바구니 상태 복원
 };
 
 // 랜덤 메뉴 추천 함수
@@ -346,4 +347,75 @@ function scrollFunction() {
 // 2. 버튼 누르면 위로 슝~
 function scrollToTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// --- 🛒 장보기 기능 (저장 기능 포함) ---
+
+// 1. 저장된 인분 & 체크리스트 불러오기 (페이지 열릴 때 실행)
+function loadIngredients() {
+    // A. 인분 수 복원
+    const savedServings = localStorage.getItem("servings_" + window.location.pathname);
+    if (savedServings) {
+        const currentServings = parseInt(savedServings);
+        // 화면 숫자 업데이트
+        document.getElementById("servings-num").innerText = currentServings;
+        // 재료 양(g) 업데이트 (1인분 기준값 * 저장된 인분)
+        const ingredients = document.querySelectorAll(".amt");
+        ingredients.forEach(item => {
+            const baseAmount = parseFloat(item.getAttribute("data-base"));
+            const newAmount = baseAmount * currentServings;
+            item.innerText = Number.isInteger(newAmount) ? newAmount : newAmount.toFixed(1);
+        });
+    }
+
+    // B. 체크리스트 복원
+    const savedChecks = JSON.parse(localStorage.getItem("checks_" + window.location.pathname)) || [];
+    const listItems = document.querySelectorAll(".ingredient-list li");
+    
+    // 저장된 번호(index)에 해당하는 항목에 .checked 클래스 붙이기
+    savedChecks.forEach(index => {
+        if (listItems[index]) {
+            listItems[index].classList.add("checked");
+        }
+    });
+}
+
+// 2. 인분 변경 함수 (+, - 버튼)
+function changeServings(change) {
+    const servingsSpan = document.getElementById("servings-num");
+    let currentServings = parseInt(servingsSpan.innerText);
+
+    let newServings = currentServings + change;
+    if (newServings < 1) return;
+
+    // A. 화면 업데이트
+    servingsSpan.innerText = newServings;
+    const ingredients = document.querySelectorAll(".amt");
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.getAttribute("data-base"));
+        const newAmount = baseAmount * newServings;
+        item.innerText = Number.isInteger(newAmount) ? newAmount : newAmount.toFixed(1);
+    });
+
+    // B. 저장 (페이지별로 따로 저장)
+    localStorage.setItem("servings_" + window.location.pathname, newServings);
+}
+
+// 3. 재료 체크 함수 (클릭 시 줄 긋기 & 저장)
+function toggleCheck(element) {
+    // A. 화면 스타일 변경
+    element.classList.toggle("checked");
+
+    // B. 현재 체크된 항목들의 번호(index)를 모두 수집해서 저장
+    const listItems = document.querySelectorAll(".ingredient-list li");
+    const checkedIndices = [];
+
+    listItems.forEach((item, index) => {
+        if (item.classList.contains("checked")) {
+            checkedIndices.push(index); // 체크된 녀석의 번호를 저장 (예: 0번, 2번...)
+        }
+    });
+
+    // 배열을 문자열로 바꿔서 저장
+    localStorage.setItem("checks_" + window.location.pathname, JSON.stringify(checkedIndices));
 }

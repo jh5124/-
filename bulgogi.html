@@ -84,7 +84,36 @@
                             과거 궁중에서는 '너비아니'라고 불리며 임금님이 드시던 고급 요리였지만, 지금은 전 세계인이 가장 사랑하는 한식 1위가 되었습니다.
                         </p>
                     </div>
-            
+                    <div class="info-item">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span class="info-label" style="margin:0;">🛒 필요 재료</span>
+        
+        <div class="servings-ctrl" style="background: #eee; padding: 5px 10px; border-radius: 20px; font-size: 0.9rem;">
+            <button onclick="changeServings(-1)" style="border:none; background:none; cursor:pointer; font-weight:bold;">➖</button>
+            <span id="servings-num" style="margin: 0 10px; font-weight:bold; color:#ff6b6b;">1</span>인분 기준
+            <button onclick="changeServings(1)" style="border:none; background:none; cursor:pointer; font-weight:bold;">➕</button>
+        </div>
+    </div>
+
+    <ul class="ingredient-list" style="list-style: none; padding: 0;">
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🥩 소고기(불고기감) <span class="amt" data-base="200">200</span>g
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🧅 양파 <span class="amt" data-base="0.5">0.5</span>개
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🍄 버섯(표고/팽이) <span class="amt" data-base="1">1</span>줌
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🍜 당면 (불린 것) <span class="amt" data-base="30">30</span>g
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🥣 양념(간장/설탕/배즙 등) <span class="amt" data-base="4">4</span>큰술
+        </li>
+    </ul>
+    <p style="font-size: 0.8rem; color: #999; margin-top: 5px;">* 재료를 클릭하면 체크할 수 있어요!</p>
+</div>
                     <div class="info-item">
                         <span class="info-label">🍳 3줄 요약 레시피</span>
                         <div class="recipe-step"><span class="step-num">1. </span><span class="step-text">간장, 설탕, 마늘, 참기름, 배즙을 섞어 '단짠 소스'를 만듭니다.</span></div>

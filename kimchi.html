@@ -70,6 +70,8 @@
         🤍 맛있겠어요! <span id="like-count">128</span>
     </button>
 </div>
+    <div class="info-item">
+    
                     <div class="fun-fact-box scroll-animate">
                     <span class="fun-title">💡 잠깐, 이거 아셨나요?</span>
                     <p style="font-size: 0.9rem; margin:0;">
@@ -83,7 +85,35 @@
                             겨울철에 얼거나 너무 시어버린 김치를 버리지 않고 활용하기 위해 물을 붓고 끓여 먹던 것이 찌개로 발전했습니다. 서민들의 배고픔을 달래주던 음식에서, 이제는 한국을 대표하는 소울 푸드가 되었습니다.
                         </p>
                     </div>
-            
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span class="info-label" style="margin:0;">🛒 필요 재료</span>
+        
+        <div class="servings-ctrl" style="background: #eee; padding: 5px 10px; border-radius: 20px; font-size: 0.9rem;">
+            <button onclick="changeServings(-1)" style="border:none; background:none; cursor:pointer; font-weight:bold;">➖</button>
+            <span id="servings-num" style="margin: 0 10px; font-weight:bold; color:#ff6b6b;">1</span>인분 기준
+            <button onclick="changeServings(1)" style="border:none; background:none; cursor:pointer; font-weight:bold;">➕</button>
+        </div>
+    </div>
+
+    <ul class="ingredient-list" style="list-style: none; padding: 0;">
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🥓 돼지고기 목살 <span class="amt" data-base="150">150</span>g
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🥬 잘 익은 김치 <span class="amt" data-base="200">200</span>g
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🤍 두부 <span class="amt" data-base="0.5">0.5</span>모
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🧅 대파/양파 <span class="amt" data-base="1">1</span>줌
+        </li>
+        <li onclick="toggleCheck(this)" style="padding: 8px 0; border-bottom: 1px dashed #ddd; cursor: pointer;">
+            🌶️ 고춧가루/다진마늘 <span class="amt" data-base="1">1</span>큰술
+        </li>
+    </ul>
+    <p style="font-size: 0.8rem; color: #999; margin-top: 5px;">* 재료를 클릭하면 체크할 수 있어요!</p>
+</div>
                     <div class="info-item">
                         <span class="info-label">🍳 3줄 요약 레시피</span>
                         <div class="recipe-step"><span class="step-num">1. </span><span class="step-text">참기름에 돼지고기와 묵은지를 달달 볶아 풍미를 올립니다.</span></div>
