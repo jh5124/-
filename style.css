@@ -553,8 +553,8 @@ body.dark-mode .fun-fact-box {
 
 /* 3. 시간차 공격 (순서대로 나오게 딜레이 주기) */
 .delay-1 { animation-delay: 0.3s; } /* 제목 */
-.delay-2 { animation-delay: 1.0s; } /* 설명 */
-.delay-3 { animation-delay: 1.8s; } /* 버튼 */
+.delay-2 { animation-delay: 1.2s; } /* 설명 */
+.delay-3 { animation-delay: 2.0s; } /* 버튼 */
 
 /* --- 🌙 다크 모드: 입력창 & 댓글창 수정 --- */
 
