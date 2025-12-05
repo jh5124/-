@@ -91,7 +91,7 @@ window.onload = function() {
 
 // 랜덤 메뉴 추천 함수
 function pickMenu() {
-    const menus = ["김치찌개", "된장찌개", "파스타", "피자", "타코", "팟타이", "쌀국수", "치킨", "삼겹살"];
+    const menus = ["김치찌개", "불고기", "비빔밥", "팟타이", "똠양꿍", "그린 커리", "파스타", "피자", "리조또"];
     const randomIndex = Math.floor(Math.random() * menus.length);
     const resultBox = document.getElementById("menu-result");
     
