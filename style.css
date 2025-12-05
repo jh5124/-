@@ -555,3 +555,28 @@ body.dark-mode .fun-fact-box {
 .delay-1 { animation-delay: 0.3s; } /* 제목 */
 .delay-2 { animation-delay: 1.0s; } /* 설명 */
 .delay-3 { animation-delay: 1.8s; } /* 버튼 */
+
+/* --- 🌙 다크 모드: 입력창 & 댓글창 수정 --- */
+
+/* 1. 입력창(검색창, 댓글창) 색상 반전 */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #333 !important; /* 배경을 진한 회색으로 */
+    color: #fff !important;            /* 글자를 흰색으로 */
+    border: 1px solid #555 !important; /* 테두리 색 조정 */
+}
+
+/* 2. 입력창 포커스(클릭) 했을 때 */
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #ff6b6b !important; /* 포인트 컬러 */
+    outline: none;
+}
+
+/* 3. 댓글 목록 박스 배경 어둡게 */
+body.dark-mode #comment-list,
+body.dark-mode #comment-input {
+    background-color: #2a2a2a !important;
+    border-color: #444 !important;
+    color: #eee;
+}
