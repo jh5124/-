@@ -52,7 +52,7 @@ nav a:hover, nav a.active { color: #ff6b6b; }
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* 무료 음식 이미지 */
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,4 +370,213 @@ footer {
     background: #ff6b6b;
     color: white;
     transform: translateX(-5px); /* 왼쪽으로 살짝 움직임 */
+}
+/* --- 가독성 업그레이드 스타일 --- */
+
+/* 1. 각 항목(유래, 레시피 등) 사이 간격 넓히기 */
+.info-item { 
+    margin-bottom: 35px;       /* 항목끼리 더 멀어지게 */
+    padding-bottom: 35px;      /* 안쪽 여백도 넉넉하게 */
+    border-bottom: 1px solid #eee; 
+}
+
+/* 2. 소제목(📜 유래와 역사 등) 디자인 */
+.info-label { 
+    font-weight: 800;          /* 더 굵게 */
+    color: #222;               /* 더 진하게 */
+    display: block; 
+    margin-bottom: 15px;       /* 제목과 본문 사이 간격 확보*/
+    font-size: 1.15rem; 
+}
+
+/* 3. 본문 글씨 읽기 편하게 만들기 */
+.info-content { 
+    color: #555; 
+    line-height: 1.8;          /* 줄 간격을 글자 크기의 1.8배로 (시원해짐) */
+    font-size: 1rem;
+    word-break: keep-all;      /* 단어가 중간에 뚝 끊기지 않게 (한글 최적화) */
+    letter-spacing: -0.02em;   /* 자간을 살짝 좁혀서 세련되게 */
+}
+/* --- TMI 박스 디자인 --- */
+.fun-fact-box {
+    background-color: #fff9db; /* 연한 노란색 배경 */
+    border-left: 5px solid #ffcc00; /* 왼쪽 진한 노란 줄 */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 살짝 그림자 추가 */
+}
+
+.fun-title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #e67700; /* 제목 색상 */
+    font-size: 1.05rem;
+}
+
+/* --- 🌙 다크 모드 스타일 --- */
+
+/* 1. 기본 배경과 글자색 반전 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* 2. 흰색 배경이었던 카드, 헤더, 사이드바를 어둡게 */
+body.dark-mode header,
+body.dark-mode .dish-card,
+body.dark-mode .sidebar,
+body.dark-mode .profile-box, 
+body.dark-mode .thai-card,
+body.dark-mode .card,
+body.dark-mode .random-menu-widget, 
+body.dark-mode .search-widget div {
+    background-color: #1e1e1e !important; /* 강제 적용 */
+    color: #e0e0e0;
+    border-color: #333; /* 테두리도 어둡게 */
+}
+
+/* 3. 링크 글자색 조정 (너무 어두우면 안 보이니까) */
+body.dark-mode a {
+    color: #bbbbbb;
+}
+body.dark-mode .logo,
+body.dark-mode .active,
+body.dark-mode .stat-value {
+    color: #ff8787; /* 붉은색을 살짝 연하게 */
+}
+
+/* 4. TMI 박스 등 밝은 박스 처리 */
+body.dark-mode .fun-fact-box {
+    background-color: #2a2a2a;
+    border-left-color: #ffcc00;
+    color: #ddd;
+}
+
+/* --- ✨ 스크롤 등장 애니메이션 --- */
+
+/* 1. 기본 상태: 숨겨져 있고, 살짝 아래로 내려가 있음 */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px); /* 아래로 30px 내려가 있음 */
+    transition: all 0.8s ease-out; /* 0.8초 동안 부드럽게 올라옴 */
+}
+
+/* 2. 활성 상태: JS가 이 클래스를 붙이면 나타남 */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 이동 */
+}
+
+/* --- 🖨️ 인쇄 모드 전용 스타일 --- */
+@media print {
+    /* 숨길 것들: 헤더, 사이드바, 버튼들, 푸터 */
+    header, .sidebar, .back-link, #top-btn, button, footer {
+        display: none !important;
+    }
+
+    /* 본문 내용을 넓게 펴기 */
+    .content-wrapper {
+        display: block; /* 플렉스 해제 */
+    }
+    .main-content {
+        width: 100%;
+        margin: 0;
+    }
+    .dish-card {
+        box-shadow: none; /* 잉크 아깝게 그림자 제거 */
+        border: 1px solid #ddd;
+    }
+}
+
+/* --- 맨 위로 가기 버튼 --- */
+#top-btn {
+    display: none; /* 평소엔 숨김 */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: #ff6b6b;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#top-btn:hover {
+    background-color: #fa5252;
+    transform: translateY(-5px); /* 살짝 붕 뜨는 효과 */
+}
+
+/* --- 🛒 재료 리스트 스타일 --- */
+.ingredient-list li {
+    transition: all 0.2s;
+}
+
+/* 체크되었을 때 (취소선 + 회색) */
+.ingredient-list li.checked {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+/* 인분 숫자 강조 */
+.amt {
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- ✨ 인트로 애니메이션 (맨 아래 추가) --- */
+
+/* 1. 애니메이션 동작 정의 (아래에서 위로 스르륵) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* 아래쪽 50px 위치에서 시작 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 제자리로 이동하며 선명해짐 */
+    }
+}
+
+/* 2. 애니메이션을 적용할 클래스 */
+.fade-in-text {
+    opacity: 0; /* 처음엔 숨김 */
+    animation: fadeInUp 1.2s ease-out forwards; /* 1.2초 동안 애니메이션 실행 */
+}
+
+/* 3. 시간차 공격 (순서대로 나오게 딜레이 주기) */
+.delay-1 { animation-delay: 0.3s; } /* 제목 */
+.delay-2 { animation-delay: 1.2s; } /* 설명 */
+.delay-3 { animation-delay: 2.0s; } /* 버튼 */
+
+/* --- 🌙 다크 모드: 입력창 & 댓글창 수정 --- */
+
+/* 1. 입력창(검색창, 댓글창) 색상 반전 */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #333 !important; /* 배경을 진한 회색으로 */
+    color: #fff !important;            /* 글자를 흰색으로 */
+    border: 1px solid #555 !important; /* 테두리 색 조정 */
+}
+
+/* 2. 입력창 포커스(클릭) 했을 때 */
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #ff6b6b !important; /* 포인트 컬러 */
+    outline: none;
+}
+
+/* 3. 댓글 목록 박스 배경 어둡게 */
+body.dark-mode #comment-list,
+body.dark-mode #comment-input {
+    background-color: #2a2a2a !important;
+    border-color: #444 !important;
+    color: #eee;
 }
