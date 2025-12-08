@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>그린커리 - Global Bites</title>
+    <title>팟타이 - Global Bites</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -17,7 +17,7 @@
                 <li><a href="index.html">홈</a></li>
                 <li><a href="italy.html">이탈리아</a></li>
                 <li><a href="korea.html">한국</a></li>
-                <li><a href="thailand.html" class="active" style="color:#4CAF50;">태국</a></li>
+                <li><a href="thailand.html" class="active" style="color:#ff6b6b;">태국</a></li>
                 <li>
                     <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">
                         🌙
@@ -38,7 +38,7 @@
                 <li>▪ 작성자: 전원영</li>
                 <li>▪ 주제: 태국의 맛</li>
             </ul>
-          </div>
+           </div>
             <div class="clock-widget">
                 <div id="current-date">0000.00.00 (월)</div>
                 <div id="current-time">00:00:00</div>
@@ -60,95 +60,87 @@
 
         <article class="dish-card">
             <div class="dish-header">
-                <h3>3. 그린커리 (Green Curry)</h3>
+                <h3>1. 팟타이 (Pad Thai)</h3>
             </div>
 
             <div class="dish-body">
-                <img src="https://i.namu.wiki/i/kF8E3Q1yoaRDGN5fBfgehmR5hM9_4Qf-sSJDd0QkMJJwAvk1VnUesDAIu5VGvUkP7NB_u1DbF-Ia9hC51MMrFa_qMyCktH63F-KtgxrcqXygIRIPc0csmCtSuI2QHUaWtCckdoXH67eKaMldeI_jkw.webp" 
-                     class="dish-img" alt="그린커리">
+                <img src="https://i.namu.wiki/i/hPjG2jdG2dVhEaN7p4-zOEOFosiR0VySHVe96FaurZsKcgh30zzQkAsJ9AM8nIpIGQd_3-fO2VAybTAuKZXTMgAYZvk7-_3hVvcogCAW6OCOcWvRNFsLBPVrCRAwRaCzJ9QGpli1qhO3QufGoLXukA.webp" class="dish-img" alt="팟타이">
 
-                <!-- ❤️ 좋아요 버튼 -->
-                <div class="like-container" style="text-align:center; margin:20px 0;">
-                    <button id="like-btn" data-name="greencurry" onclick="toggleLike()" 
-                        style="background:white; border:2px solid #4CAF50; padding:10px 20px; border-radius:50px; color:#4CAF50; cursor:pointer;">
-                        🤍 맛있겠어요! <span id="like-count">89</span>
+                <!-- 👍 좋아요 버튼 -->
+                <div class="like-container" style="text-align: center; margin: 20px 0;">
+                    <button id="like-btn" data-name="padthai" onclick="toggleLike()" 
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">87</span>
                     </button>
                 </div>
 
                 <!-- ⭐ 요리 정보 -->
                 <div class="dish-stats">
-                    <div class="stat-item">맛 타입 <span class="stat-value">🥥 고소 + 🌶️ 은은한 매콤함</span></div>
+                    <div class="stat-item">맛 타입 <span class="stat-value">🍋 새콤 + 달콤 + 고소</span></div>
                     <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
-                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 15분</span></div>
                 </div>
 
                 <!-- 💡 트리비아 -->
                 <div class="fun-fact-box">
-                    <span class="fun-title">💡 그린커리 트리비아</span>
-                    <p style="font-size:0.9rem;">
-                        태국의 3대 커리 중 가장 대중적인 메뉴!  
-                        초록색의 비밀은 바로 **그린칠리 + 허브 페이스트** 때문이에요.
+                    <span class="fun-title">💡 팟타이 트리비아</span>
+                    <p style="font-size: 0.9rem;">
+                        태국 정부가 국가 브랜드 강화를 위해 '국민 면 요리'로 선정하며 세계적으로 유명해졌어요!
                     </p>
                 </div>
 
-                <!-- 📜 유래 -->
+                <!-- ⭐ 유래 -->
                 <div class="info-item">
                     <span class="info-label">📜 유래와 특징</span>
                     <p class="info-content">
-                        그린커리는 진한 코코넛밀크에 허브와 향신료를 듬뿍 넣어 만든 태국식 커리입니다.
-                        부드럽고 고소하면서도 뒤따라오는 깔끔한 매운맛이 매력적인 음식이에요.
+                        팟타이는 쌀국수에 새우, 숙주, 계란, 땅콩, 타마린드 소스를 넣어 볶은 태국 대표 볶음면입니다.  
+                        새콤달콤하면서도 은근히 감칠맛이 강해 한국인의 입맛에도 찰떡궁합!
                     </p>
                 </div>
 
-                <!-- 🛒 재료 -->
+                <!-- 🛒 재료 섹션 -->
                 <div class="info-item">
                     <div style="display:flex; justify-content:space-between; align-items:center;">
                         <span class="info-label">🛒 필요 재료</span>
 
                         <div class="servings-ctrl" style="background:#eee; padding:5px 10px; border-radius:20px;">
                             <button onclick="changeServings(-1)" style="border:none; background:none; cursor:pointer;">➖</button>
-                            <span id="servings-num" style="margin:0 10px; color:#4CAF50; font-weight:bold;">1</span>인분
+                            <span id="servings-num" style="margin:0 10px; color:#ff6b6b; font-weight:bold;">1</span>인분
                             <button onclick="changeServings(1)" style="border:none; background:none; cursor:pointer;">➕</button>
                         </div>
                     </div>
 
                     <ul class="ingredient-list" style="list-style:none; padding:0;">
-                        <li onclick="toggleCheck(this)">🍗 닭고기 <span class="amt" data-base="120">120</span>g</li>
-                        <li onclick="toggleCheck(this)">🥥 코코넛밀크 <span class="amt" data-base="150">150</span>ml</li>
-                        <li onclick="toggleCheck(this)">🍆 가지 <span class="amt" data-base="50">50</span>g</li>
-                        <li onclick="toggleCheck(this)">🌿 그린커리 페이스트 <span class="amt" data-base="1">1</span>큰술</li>
-                        <li onclick="toggleCheck(this)">🍃 바질 <span class="amt" data-base="1">1</span>줌</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🍜 쌀국수 <span class="amt" data-base="120">120</span>g</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🦐 새우 <span class="amt" data-base="4">4</span>마리</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🥚 계란 <span class="amt" data-base="1">1</span>개</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🌱 숙주 <span class="amt" data-base="50">50</span>g</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🥜 땅콩 분태 <span class="amt" data-base="2">2</span>큰술</li>
                     </ul>
-                    <p style="font-size:0.8rem; color:#999;">* 재료 클릭하면 체크됩니다!</p>
+                    <p style="font-size:0.8rem; color:#999;">* 재료 클릭하면 체크됨!</p>
                 </div>
 
                 <!-- 🍳 레시피 -->
                 <div class="info-item">
                     <span class="info-label">🍳 3줄 요약 레시피</span>
-                    <div class="recipe-step"><span class="step-num">1.</span> 커리 페이스트를 볶아 향을 내고 코코넛밀크를 넣어 끓입니다.</div>
-                    <div class="recipe-step"><span class="step-num">2.</span> 닭고기와 채소를 넣어 부드럽게 익힙니다.</div>
-                    <div class="recipe-step"><span class="step-num">3.</span> 바질을 넣어 향을 더하면 완성!</div>
+                    <div class="recipe-step"><span class="step-num">1.</span> 타마린드 소스와 면을 볶아 맛의 베이스를 만듭니다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 계란을 넣어 고소함을 더해줍니다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 땅콩·라임을 얹어 향을 완성!</div>
                 </div>
 
-                <!-- 🍽️ 맛집 -->
+                <!-- 📍 맛집 -->
                 <div class="info-item">
-                    <span class="info-label">🗺️ 한국 팟타이 맛집 (클릭)</span>
-                    <a href="https://naver.me/x2jQJH8F" target="_blank" class="store-tag"_blank">📍 팟타이 로얄</a>
+                    <span class="info-label">🗺️ 현지 맛집</span>
+                    <a href="https://share.google/UlFVmENrNi3s46dzs" target="_blank" class="store-tag">📍 팁사마이</a>
                 </div>
 
-                <!-- 공유 / 인쇄 -->
+                <!-- 🔗 공유 / 인쇄 -->
                 <div style="text-align:center; margin:40px 0;">
                     <button onclick="shareLink()" style="background:#333; color:white; padding:12px 25px; border-radius:5px;">🔗 친구에게 공유하기</button>
                     <button onclick="window.print()" style="background:white; border:1px solid #333; padding:12px 25px; border-radius:5px;">🖨️ 레시피 인쇄</button>
                 </div>
 
-                <div id="toast-msg" style="visibility:hidden; position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#333; color:white; padding:15px 20px; border-radius:20px;">
-                    주소가 복사되었습니다! 📋
-                </div>
-
-            </div>
-
-            <!-- 💬 댓글 섹션 -->
+                <!-- 💬 댓글 섹션 -->
 <div class="comment-section" style="margin-top:50px;">
 
     <h3 style="font-size:1.4rem; font-weight:700; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
@@ -207,7 +199,6 @@
     </div>
 
 </div>
-
 
 <footer>
     <div class="container">
