@@ -417,9 +417,5 @@ function toggleCheck(element) {
     });
 
     // 배열을 문자열로 바꿔서 저장
-    // * window.location.pathname을 사용하여 팟타이 페이지별로 저장
     localStorage.setItem("checks_" + window.location.pathname, JSON.stringify(checkedIndices));
 }
-
-// 팟타이 페이지에서는 이 함수가 잘 작동하는지 확인해주세요. 
-// 만약 이 함수 뒤에 불필요한 }가 있다면 지워주세요!
