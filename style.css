@@ -580,3 +580,23 @@ body.dark-mode #comment-input {
     border-color: #444 !important;
     color: #eee;
 }
+/* 5. [추가] 상세 페이지 본문 글자 가독성 개선 */
+body.dark-mode .info-label {
+    /* "유래와 역사", "재료 준비" 등 소제목을 흰색으로 강조 */
+    color: #fff !important; 
+}
+
+body.dark-mode .info-content {
+    /* 본문 내용(레시피, 설명 등)의 글자색을 밝게 */
+    color: #e0e0e0 !important; 
+}
+
+body.dark-mode .amt {
+    /* 재료의 숫자(g, ml)를 흰색으로 선명하게 */
+    color: #fff !important;
+}
+
+body.dark-mode .card-desc {
+    /* 메인 페이지 카드 설명 글자도 밝게 */
+    color: #bbb !important;
+}
