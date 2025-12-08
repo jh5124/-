@@ -17,8 +17,12 @@
                 <li><a href="index.html">홈</a></li>
                 <li><a href="italy.html">이탈리아</a></li>
                 <li><a href="korea.html">한국</a></li>
-                <li><a href="thailand.html" class="active">태국</a></li>
-                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+                <li><a href="thailand.html" class="active" style="color:#4CAF50;">태국</a></li>
+                <li>
+                    <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">
+                        🌙
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>
@@ -34,12 +38,22 @@
                 <li>▪ 작성자: 전원영</li>
                 <li>▪ 주제: 태국의 맛</li>
             </ul>
-        </div>
-        <div class="clock-widget">
-            <div id="current-date">0000.00.00 (월)</div>
-            <div id="current-time">00:00:00</div>
-        </div>
-    </aside>
+          </div>
+            <div class="clock-widget">
+                <div id="current-date">0000.00.00 (월)</div>
+                <div id="current-time">00:00:00</div>
+            </div>
+            <div class="random-menu-widget" style="margin-top: 20px; background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: #333;">🎲 오늘 뭐 먹지?</h4>
+                <div id="menu-result" style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin: 15px 0; min-height: 30px;">❓</div>
+                <button onclick="pickMenu()" style="background: #333; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">메뉴 뽑기</button>
+            
+            <div class="search-widget" style="margin-top: 20px;">
+    <div style="display: flex; background: white; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px;">
+        <input type="text" placeholder="레시피 검색..." style="border: none; outline: none; width: 100%; font-size: 0.9rem;"> <!--작동은 안 함-->
+        <span style="cursor: pointer;">🔍</span>
+    </div></div>
+        </aside>
 
     <main class="main-content">
         <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
@@ -53,74 +67,157 @@
                 <img src="https://i.namu.wiki/i/kF8E3Q1yoaRDGN5fBfgehmR5hM9_4Qf-sSJDd0QkMJJwAvk1VnUesDAIu5VGvUkP7NB_u1DbF-Ia9hC51MMrFa_qMyCktH63F-KtgxrcqXygIRIPc0csmCtSuI2QHUaWtCckdoXH67eKaMldeI_jkw.webp" 
                      class="dish-img" alt="그린커리">
 
-                <div class="dish-stats">
-                    <div class="stat-item">향 타입 <span class="stat-value">🌿 허브 + 코코넛</span></div>
-                    <div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
-                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 30분</span></div>
-                </div>
-
+                <!-- ❤️ 좋아요 버튼 -->
                 <div class="like-container" style="text-align:center; margin:20px 0;">
-                    <button id="like-btn" data-name="greencurry" onclick="toggleLike()"
-                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
-                        🤍 맛있겠어요! <span id="like-count">73</span>
+                    <button id="like-btn" data-name="greencurry" onclick="toggleLike()" 
+                        style="background:white; border:2px solid #4CAF50; padding:10px 20px; border-radius:50px; color:#4CAF50; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">89</span>
                     </button>
                 </div>
 
+                <!-- ⭐ 요리 정보 -->
+                <div class="dish-stats">
+                    <div class="stat-item">맛 타입 <span class="stat-value">🥥 고소 + 🌶️ 은은한 매콤함</span></div>
+                    <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
+                </div>
+
+                <!-- 💡 트리비아 -->
                 <div class="fun-fact-box">
-                    <span class="fun-title">💡 그린커리 trivia</span>
+                    <span class="fun-title">💡 그린커리 트리비아</span>
                     <p style="font-size:0.9rem;">
-                        그린커리는 태국 카레 중 가장 향이 진하고, 허브·고추·코코넛밀크의 조화로  
-                        ‘태국 특유의 향’을 가장 강하게 느낄 수 있는 메뉴예요!
+                        태국의 3대 커리 중 가장 대중적인 메뉴!  
+                        초록색의 비밀은 바로 **그린칠리 + 허브 페이스트** 때문이에요.
                     </p>
                 </div>
 
+                <!-- 📜 유래 -->
                 <div class="info-item">
-                    <span class="info-label">📜 특징과 유래</span>
+                    <span class="info-label">📜 유래와 특징</span>
                     <p class="info-content">
-                        그린커리는 태국 남부·중부 지역에서 발전한 요리로, 코코넛밀크의 부드러움과  
-                        그린페이스트의 매콤함이 어우러진 깊은 풍미가 특징입니다.
+                        그린커리는 진한 코코넛밀크에 허브와 향신료를 듬뿍 넣어 만든 태국식 커리입니다.
+                        부드럽고 고소하면서도 뒤따라오는 깔끔한 매운맛이 매력적인 음식이에요.
                     </p>
                 </div>
 
+                <!-- 🛒 재료 -->
+                <div class="info-item">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span class="info-label">🛒 필요 재료</span>
+
+                        <div class="servings-ctrl" style="background:#eee; padding:5px 10px; border-radius:20px;">
+                            <button onclick="changeServings(-1)" style="border:none; background:none; cursor:pointer;">➖</button>
+                            <span id="servings-num" style="margin:0 10px; color:#4CAF50; font-weight:bold;">1</span>인분
+                            <button onclick="changeServings(1)" style="border:none; background:none; cursor:pointer;">➕</button>
+                        </div>
+                    </div>
+
+                    <ul class="ingredient-list" style="list-style:none; padding:0;">
+                        <li onclick="toggleCheck(this)">🍗 닭고기 <span class="amt" data-base="120">120</span>g</li>
+                        <li onclick="toggleCheck(this)">🥥 코코넛밀크 <span class="amt" data-base="150">150</span>ml</li>
+                        <li onclick="toggleCheck(this)">🍆 가지 <span class="amt" data-base="50">50</span>g</li>
+                        <li onclick="toggleCheck(this)">🌿 그린커리 페이스트 <span class="amt" data-base="1">1</span>큰술</li>
+                        <li onclick="toggleCheck(this)">🍃 바질 <span class="amt" data-base="1">1</span>줌</li>
+                    </ul>
+                    <p style="font-size:0.8rem; color:#999;">* 재료 클릭하면 체크됩니다!</p>
+                </div>
+
+                <!-- 🍳 레시피 -->
                 <div class="info-item">
                     <span class="info-label">🍳 3줄 요약 레시피</span>
-                    <div class="recipe-step"><span class="step-num">1.</span> 그린커리 페이스트 + 코코넛밀크를 볶아 향을 낸다.</div>
-                    <div class="recipe-step"><span class="step-num">2.</span> 닭고기·가지·피망을 넣고 졸인다.</div>
-                    <div class="recipe-step"><span class="step-num">3.</span> 생바질을 올려 향 완성!</div>
+                    <div class="recipe-step"><span class="step-num">1.</span> 커리 페이스트를 볶아 향을 내고 코코넛밀크를 넣어 끓입니다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 닭고기와 채소를 넣어 부드럽게 익힙니다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 바질을 넣어 향을 더하면 완성!</div>
                 </div>
 
+                <!-- 🍽️ 맛집 -->
                 <div class="info-item">
-                    <span class="info-label">🗺️ 그린커리 맛집 네이버 지도에서 찾기</span>
-                    <a href="https://naver.me/x2jQJH8F" target="_blank" class="store-tag">📍 팟타이로얄</a>
+                    <span class="info-label">🗺️ 한국 팟타이 맛집 (클릭)</span>
+                    <a href="https://naver.me/x2jQJH8F" target="_blank" class="store-tag"_blank">📍 팟타이 로얄</a>
                 </div>
-            </div>
-        </article>
-    </main>
-</div>
 
-<!-- 댓글 섹션 -->
-<div class="container" style="margin-top:40px; margin-bottom:80px;">
-    <h3>💬 댓글 남기기</h3>
-    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
-        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
-        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+                <!-- 공유 / 인쇄 -->
+                <div style="text-align:center; margin:40px 0;">
+                    <button onclick="shareLink()" style="background:#333; color:white; padding:12px 25px; border-radius:5px;">🔗 친구에게 공유하기</button>
+                    <button onclick="window.print()" style="background:white; border:1px solid #333; padding:12px 25px; border-radius:5px;">🖨️ 레시피 인쇄</button>
+                </div>
+
+                <div id="toast-msg" style="visibility:hidden; position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#333; color:white; padding:15px 20px; border-radius:20px;">
+                    주소가 복사되었습니다! 📋
+                </div>
+
+            </div>
+
+            <!-- 💬 댓글 섹션 -->
+<div class="comment-section" style="margin-top:50px;">
+
+    <h3 style="font-size:1.4rem; font-weight:700; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem;">💬</span> 댓글 남기기
+    </h3>
+
+    <!-- 댓글 작성 박스 -->
+    <div style="
+        background:#ffffff;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:20px;
+        margin-bottom:20px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    ">
+        <textarea id="comment-input"
+            placeholder="댓글을 입력하세요..."
+            style="
+                width:100%;
+                height:120px;
+                padding:12px;
+                border:1px solid #bbb;
+                border-radius:6px;
+                resize:none;
+                font-size:0.95rem;
+            "
+        ></textarea>
+
+        <button onclick="addComment()" 
+            style="
+                margin-top:12px;
+                background:#ff6b6b;
+                color:white;
+                border:none;
+                padding:10px 20px;
+                border-radius:6px;
+                cursor:pointer;
+                font-size:0.9rem;
+                font-weight:bold;
+            "
+        >
             댓글 작성
         </button>
     </div>
 
-    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+    <!-- 작성된 댓글 표시 박스 -->
+    <div id="comment-list" style="
+        background:#fafafa;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:20px;
+        min-height:60px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    ">
         <p style="color:#888;">작성된 댓글이 없습니다.</p>
     </div>
+
 </div>
+
 
 <footer>
     <div class="container">
         <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+         <p>사진 출처: 나무위키</p>
     </div>
 </footer>
 
 <button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
 <script src="script.js"></script>
+
 </body>
 </html>
-

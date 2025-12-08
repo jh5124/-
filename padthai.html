@@ -17,9 +17,9 @@
                 <li><a href="index.html">홈</a></li>
                 <li><a href="italy.html">이탈리아</a></li>
                 <li><a href="korea.html">한국</a></li>
-                <li><a href="thailand.html">태국</a></li>
+                <li><a href="thailand.html" class="active" style="color:#ff6b6b;">태국</a></li>
                 <li>
-                    <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">
+                    <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">
                         🌙
                     </button>
                 </li>
@@ -31,24 +31,29 @@
 <div class="container content-wrapper">
     <aside class="sidebar">
         <div class="profile-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" alt="팀 로고" class="profile-img">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992797.png" class="profile-img">
             <h3>Global Bites</h3>
             <p>4조 Team Project</p>
             <ul class="profile-info">
                 <li>▪ 작성자: 전원영</li>
                 <li>▪ 주제: 태국의 맛</li>
             </ul>
-        </div>
-        <div class="clock-widget">
-            <div id="current-date">0000.00.00 (월)</div>
-            <div id="current-time">00:00:00</div>
-        </div>
-        <div class="random-menu-widget" style="margin-top: 20px; background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
-            <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: #333;">🎲 오늘 뭐 먹지?</h4>
-            <div id="menu-result" style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin: 15px 0; min-height: 30px;">❓</div>
-            <button onclick="pickMenu()" style="background: #333; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">메뉴 뽑기</button>
-        </div>
-    </aside>
+           </div>
+            <div class="clock-widget">
+                <div id="current-date">0000.00.00 (월)</div>
+                <div id="current-time">00:00:00</div>
+            </div>
+            <div class="random-menu-widget" style="margin-top: 20px; background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: #333;">🎲 오늘 뭐 먹지?</h4>
+                <div id="menu-result" style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin: 15px 0; min-height: 30px;">❓</div>
+                <button onclick="pickMenu()" style="background: #333; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">메뉴 뽑기</button>
+            
+            <div class="search-widget" style="margin-top: 20px;">
+    <div style="display: flex; background: white; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px;">
+        <input type="text" placeholder="레시피 검색..." style="border: none; outline: none; width: 100%; font-size: 0.9rem;"> <!--작동은 안 함-->
+        <span style="cursor: pointer;">🔍</span>
+    </div></div>
+        </aside>
 
     <main class="main-content">
         <a href="thailand.html" class="back-link">← 메뉴판으로 돌아가기</a>
@@ -57,96 +62,153 @@
             <div class="dish-header">
                 <h3>1. 팟타이 (Pad Thai)</h3>
             </div>
+
             <div class="dish-body">
                 <img src="https://i.namu.wiki/i/hPjG2jdG2dVhEaN7p4-zOEOFosiR0VySHVe96FaurZsKcgh30zzQkAsJ9AM8nIpIGQd_3-fO2VAybTAuKZXTMgAYZvk7-_3hVvcogCAW6OCOcWvRNFsLBPVrCRAwRaCzJ9QGpli1qhO3QufGoLXukA.webp" class="dish-img" alt="팟타이">
 
+                <!-- 👍 좋아요 버튼 -->
+                <div class="like-container" style="text-align: center; margin: 20px 0;">
+                    <button id="like-btn" data-name="padthai" onclick="toggleLike()" 
+                        style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
+                        🤍 맛있겠어요! <span id="like-count">87</span>
+                    </button>
+                </div>
+
+                <!-- ⭐ 요리 정보 -->
                 <div class="dish-stats">
                     <div class="stat-item">맛 타입 <span class="stat-value">🍋 새콤 + 달콤 + 고소</span></div>
                     <div class="stat-item">난이도 <span class="stat-value">⭐⭐</span></div>
-                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 20분</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 15분</span></div>
                 </div>
 
-                <!-- 좋아요 버튼 -->
-                <div class="like-container" style="text-align: center; margin: 20px 0;">
-                    <button id="like-btn" data-name="padthai" onclick="toggleLike()" style="background: white; border: 2px solid #ff6b6b; border-radius: 50px; padding: 10px 20px; color: #ff6b6b; font-weight: bold; cursor: pointer; transition: 0.3s;">
-                        🤍 맛있겠어요! <span id="like-count">96</span>
-                    </button>
-                </div>
-
-                <div class="fun-fact-box scroll-animate">
-                    <span class="fun-title">💡 잠깐, 이거 아셨나요?</span>
-                    <p style="font-size: 0.9rem; margin:0;">
-                        팟타이는 1930~40년대 태국 정부가 <b>쌀 소비를 줄이고 쌀국수를 장려</b>하기 위해 홍보했던 메뉴라서,  
-                        지금은 “태국을 대표하는 국민 볶음국수”로 자리 잡았어요!
+                <!-- 💡 트리비아 -->
+                <div class="fun-fact-box">
+                    <span class="fun-title">💡 팟타이 트리비아</span>
+                    <p style="font-size: 0.9rem;">
+                        태국 정부가 국가 브랜드 강화를 위해 '국민 면 요리'로 선정하며 세계적으로 유명해졌어요!
                     </p>
                 </div>
 
+                <!-- ⭐ 유래 -->
                 <div class="info-item">
                     <span class="info-label">📜 유래와 특징</span>
                     <p class="info-content">
-                        팟타이는 쌀국수를 타마린드 소스, 피시소스, 설탕으로 볶아 만드는 태국식 볶음국수입니다.
-                        새콤달콤한 양념에 고소한 땅콩과 라임 향이 더해져 한입 먹으면 입안이 꽉 차는 느낌이 나요.
-                        태국 길거리에서도 가장 유명한 메뉴라 여행객들이 꼭 한 번씩 먹어보는 음식입니다.
+                        팟타이는 쌀국수에 새우, 숙주, 계란, 땅콩, 타마린드 소스를 넣어 볶은 태국 대표 볶음면입니다.  
+                        새콤달콤하면서도 은근히 감칠맛이 강해 한국인의 입맛에도 찰떡궁합!
                     </p>
                 </div>
 
+                <!-- 🛒 재료 섹션 -->
+                <div class="info-item">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span class="info-label">🛒 필요 재료</span>
+
+                        <div class="servings-ctrl" style="background:#eee; padding:5px 10px; border-radius:20px;">
+                            <button onclick="changeServings(-1)" style="border:none; background:none; cursor:pointer;">➖</button>
+                            <span id="servings-num" style="margin:0 10px; color:#ff6b6b; font-weight:bold;">1</span>인분
+                            <button onclick="changeServings(1)" style="border:none; background:none; cursor:pointer;">➕</button>
+                        </div>
+                    </div>
+
+                    <ul class="ingredient-list" style="list-style:none; padding:0;">
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🍜 쌀국수 <span class="amt" data-base="120">120</span>g</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🦐 새우 <span class="amt" data-base="4">4</span>마리</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🥚 계란 <span class="amt" data-base="1">1</span>개</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🌱 숙주 <span class="amt" data-base="50">50</span>g</li>
+                        <li onclick="toggleCheck(this)" style="padding:8px 0;">🥜 땅콩 분태 <span class="amt" data-base="2">2</span>큰술</li>
+                    </ul>
+                    <p style="font-size:0.8rem; color:#999;">* 재료 클릭하면 체크됨!</p>
+                </div>
+
+                <!-- 🍳 레시피 -->
                 <div class="info-item">
                     <span class="info-label">🍳 3줄 요약 레시피</span>
-                    <div class="recipe-step"><span class="step-num">1. </span><span class="step-text">쌀국수를 불린 뒤, 팬에 기름을 두르고 새우(또는 닭고기)와 함께 볶아요.</span></div>
-                    <div class="recipe-step"><span class="step-num">2. </span><span class="step-text">타마린드 소스, 피시소스, 설탕을 넣어 새콤달콤한 소스를 만들고 면과 골고루 섞어요.</span></div>
-                    <div class="recipe-step"><span class="step-num">3. </span><span class="step-text">숙주, 부추, 땅콩가루를 올리고 마지막에 라임을 짜면 태국 길거리 느낌 팟타이 완성!</span></div>
+                    <div class="recipe-step"><span class="step-num">1.</span> 타마린드 소스와 면을 볶아 맛의 베이스를 만듭니다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 계란을 넣어 고소함을 더해줍니다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 땅콩·라임을 얹어 향을 완성!</div>
                 </div>
 
+                <!-- 📍 맛집 -->
                 <div class="info-item">
-                    <span class="info-label">🗺️ 태국 팟타이 현지 맛집 (클릭)</span>
-                    <a href="https://share.google/UlFVmENrNi3s46dzs" target="_blank" class="store-tag">📍 팁싸마이</a>
+                    <span class="info-label">🗺️ 현지 맛집</span>
+                    <a href="https://share.google/UlFVmENrNi3s46dzs" target="_blank" class="store-tag">📍 팁사마이</a>
                 </div>
 
-                <!-- 공유 / 인쇄 버튼 -->
-                <div style="text-align: center; margin: 40px 0;">
-                    <button onclick="shareLink()" style="background: #333; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer;">
-                        🔗 친구에게 공유하기
-                    </button>
-                    <button onclick="window.print()" style="background: white; border: 1px solid #333; color: #333; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold;">
-                        🖨️ 레시피 인쇄
-                    </button>
+                <!-- 🔗 공유 / 인쇄 -->
+                <div style="text-align:center; margin:40px 0;">
+                    <button onclick="shareLink()" style="background:#333; color:white; padding:12px 25px; border-radius:5px;">🔗 친구에게 공유하기</button>
+                    <button onclick="window.print()" style="background:white; border:1px solid #333; padding:12px 25px; border-radius:5px;">🖨️ 레시피 인쇄</button>
                 </div>
 
-                <div id="toast-msg" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 25px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 17px;">
-                    주소가 복사되었습니다! 📋
-                </div>
+                <!-- 💬 댓글 섹션 -->
+<div class="comment-section" style="margin-top:50px;">
 
-            </div>
-        </article>
-    </main>
-</div>
+    <h3 style="font-size:1.4rem; font-weight:700; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem;">💬</span> 댓글 남기기
+    </h3>
 
-<div class="container" style="margin-top:40px; margin-bottom:80px;">
-    <h3 style="margin-bottom:15px;">💬 댓글 남기기</h3>
-
-    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
-        <textarea id="comment-input" placeholder="댓글을 입력하세요..."
-            style="width:100%; height:80px; padding:10px; border-radius:6px; border:1px solid #ccc;"></textarea>
+    <!-- 댓글 작성 박스 -->
+    <div style="
+        background:#ffffff;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:20px;
+        margin-bottom:20px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    ">
+        <textarea id="comment-input"
+            placeholder="댓글을 입력하세요..."
+            style="
+                width:100%;
+                height:120px;
+                padding:12px;
+                border:1px solid #bbb;
+                border-radius:6px;
+                resize:none;
+                font-size:0.95rem;
+            "
+        ></textarea>
 
         <button onclick="addComment()" 
-            style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;">
+            style="
+                margin-top:12px;
+                background:#ff6b6b;
+                color:white;
+                border:none;
+                padding:10px 20px;
+                border-radius:6px;
+                cursor:pointer;
+                font-size:0.9rem;
+                font-weight:bold;
+            "
+        >
             댓글 작성
         </button>
     </div>
 
-    <div id="comment-list" 
-         style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+    <!-- 작성된 댓글 표시 박스 -->
+    <div id="comment-list" style="
+        background:#fafafa;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:20px;
+        min-height:60px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    ">
         <p style="color:#888;">작성된 댓글이 없습니다.</p>
     </div>
+
 </div>
 
 <footer>
     <div class="container">
         <p>&copy; 2025 Global Bites 4조 Team Project.</p>
+         <p>사진 출처: 나무위키</p>
     </div>
 </footer>
 
 <button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
 <script src="script.js"></script>
+
 </body>
 </html>
