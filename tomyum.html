@@ -17,8 +17,12 @@
                 <li><a href="index.html">홈</a></li>
                 <li><a href="italy.html">이탈리아</a></li>
                 <li><a href="korea.html">한국</a></li>
-                <li><a href="thailand.html" class="active">태국</a></li>
-                <li><button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button></li>
+                <li><a href="thailand.html" class="active" style="color:#ff6b6b;">태국</a></li>
+                <li>
+                    <button id="dark-mode-btn" onclick="toggleDarkMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">
+                        🌙
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>
@@ -35,6 +39,7 @@
                 <li>▪ 주제: 태국의 맛</li>
             </ul>
         </div>
+
         <div class="clock-widget">
             <div id="current-date">0000.00.00 (월)</div>
             <div id="current-time">00:00:00</div>
@@ -50,67 +55,149 @@
             </div>
 
             <div class="dish-body">
-                <img src="https://i.namu.wiki/i/aRh322aVaP5PAfqOmcaChG0ujd4-E8pzCqxM9CAsQpXErxqbW4AVXFoqkCR6CEINuk5_P1n3V5_9sUgnrd3FjfWuegFj8gpTc1j2BHrBGMZR49q4ytrhjRT-JRgjyzOE5WuIOJY-P0aZzB3ijbD-uA.webp" class="dish-img" alt="똠양꿍">
+                <img src="https://i.namu.wiki/i/aRh322aVaP5PAfqOmcaChG0ujd4-E8pzCqxM9CAsQpXErxqbW4AVXFoqkCR6CEINuk5_P1n3V5_9sUgnrd3FjfWuegFj8gpTc1j2BHrBGMZR49q4ytrhjRT-JRgjyzOE5WuIOJY-P0aZzB3ijbD-uA.webp" 
+                     class="dish-img" alt="똠양꿍">
 
-                <div class="dish-stats">
-                    <div class="stat-item">맵기 <span class="stat-value">🌶️🌶️🌶️🌶️</span></div>
-                    <div class="stat-item">맛 타입 <span class="stat-value">🍋 새콤 + 매콤</span></div>
-                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 25분</span></div>
-                </div>
-
+                <!-- ❤️ 좋아요 버튼 -->
                 <div class="like-container" style="text-align:center; margin:20px 0;">
-                    <button id="like-btn" data-name="tomyum" onclick="toggleLike()"
+                    <button id="like-btn" data-name="tomyum" onclick="toggleLike()" 
                         style="background:white; border:2px solid #ff6b6b; padding:10px 20px; border-radius:50px; color:#ff6b6b; cursor:pointer;">
-                        🤍 맛있겠어요! <span id="like-count">84</span>
+                        🤍 맛있겠어요! <span id="like-count">102</span>
                     </button>
                 </div>
 
+                <!-- ⭐ 요리 정보 -->
+                <div class="dish-stats">
+                    <div class="stat-item">맛 타입 <span class="stat-value">🌶️ 매콤 + 🍋 새콤 + 🦐 감칠맛</span></div>
+                    <div class="stat-item">난이도 <span class="stat-value">⭐⭐⭐</span></div>
+                    <div class="stat-item">조리시간 <span class="stat-value">⏰ 25분</span></div>
+                </div>
+
+                <!-- 💡 트리비아 -->
                 <div class="fun-fact-box">
-                    <span class="fun-title">💡 똠양꿍 trivia</span>
+                    <span class="fun-title">💡 똠양꿍 트리비아</span>
                     <p style="font-size:0.9rem;">
-                        똠양꿍은 태국의 국물요리 중에서도 세계 3대 수프에 꼽히며,  
-                        ‘매콤한 향의 정점’이라 불릴 정도로 향신료의 조화가 뛰어나요!
+                        '똠(끓이다)' + '얌(섞다)' + '꿍(새우)'  
+                        = **새우가 들어간 매콤새콤 국물요리**라는 뜻!  
+                        태국의 공식적인 국가대표 음식으로 꼽히기도 해요.
                     </p>
                 </div>
 
+                <!-- 📜 유래 -->
                 <div class="info-item">
-                    <span class="info-label">📜 특징과 유래</span>
+                    <span class="info-label">📜 유래와 특징</span>
                     <p class="info-content">
-                        레몬그라스·라임잎·갈랑가·고추로 향을 내고, 새우를 넣어 끓이는 태국의 대표 수프입니다.  
-                        매콤하면서도 상큼하고, 향신료의 깊은 향이 특징이에요.
+                        똠양꿍은 라임·레몬그라스·갈랑가의 향이 가득한 태국식 해산물 수프입니다.
+                        얼큰하면서도 상큼한 향이 특징이며, 태국 음식 중 가장 세계적으로 유명한 메뉴죠.
                     </p>
                 </div>
 
+                <!-- 🛒 재료 -->
+                <div class="info-item">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span class="info-label">🛒 필요 재료</span>
+
+                        <div class="servings-ctrl" style="background:#eee; padding:5px 10px; border-radius:20px;">
+                            <button onclick="changeServings(-1)" style="border:none; background:none; cursor:pointer;">➖</button>
+                            <span id="servings-num" style="margin:0 10px; color:#ff6b6b; font-weight:bold;">1</span>인분
+                            <button onclick="changeServings(1)" style="border:none; background:none; cursor:pointer;">➕</button>
+                        </div>
+                    </div>
+
+                    <ul class="ingredient-list" style="list-style:none; padding:0;">
+                        <li onclick="toggleCheck(this)">🦐 새우 <span class="amt" data-base="4">4</span>마리</li>
+                        <li onclick="toggleCheck(this)">🍄 버섯 <span class="amt" data-base="50">50</span>g</li>
+                        <li onclick="toggleCheck(this)">🌱 레몬그라스 <span class="amt" data-base="1">1</span>줄기</li>
+                        <li onclick="toggleCheck(this)">🍋 라임즙 <span class="amt" data-base="1">1</span>큰술</li>
+                        <li onclick="toggleCheck(this)">🌶️ 고추페이스트(남프릭파오) <span class="amt" data-base="1">1</span>큰술</li>
+                    </ul>
+                    <p style="font-size:0.8rem; color:#999;">* 재료 클릭하면 체크됩니다!</p>
+                </div>
+
+                <!-- 🍳 레시피 -->
                 <div class="info-item">
                     <span class="info-label">🍳 3줄 요약 레시피</span>
-                    <div class="recipe-step"><span class="step-num">1.</span> 레몬그라스·라임잎·갈랑가를 끓여 향을 우린다.</div>
-                    <div class="recipe-step"><span class="step-num">2.</span> 새우와 버섯을 넣고 칠리 페이스트로 매운맛을 더한다.</div>
-                    <div class="recipe-step"><span class="step-num">3.</span> 라임즙을 짜서 새콤함 완성!</div>
+                    <div class="recipe-step"><span class="step-num">1.</span> 레몬그라스와 갈랑가를 끓여 향을 냅니다.</div>
+                    <div class="recipe-step"><span class="step-num">2.</span> 새우와 버섯을 넣어 감칠맛을 더합니다.</div>
+                    <div class="recipe-step"><span class="step-num">3.</span> 라임즙·고추페이스트로 새콤 매콤하게 마무리!</div>
                 </div>
 
+                <!-- 🍽️ 맛집 -->
                 <div class="info-item">
-                    <span class="info-label">🗺️ 태국 똠양꿍 맛집</span>
-                    <a href="https://map.naver.com/v5/search/똠양꿍" target="_blank" class="store-tag">📍 똠양꿍 맛집 검색하기</a>
+                    <span class="info-label">🗺️ 한국에서도 즐기는 똠양꿍 (클릭)</span>
+                    <a href="https://share.diningcode.com/profile.php?rid=5NL0yj9twB7m" class="store-tag">📍 툭툭누들타이</a>
                 </div>
-            </div>
-        </article>
-    </main>
-</div>
 
-<!-- 댓글 섹션 -->
-<div class="container" style="margin-top:40px; margin-bottom:80px;">
-    <h3>💬 댓글 남기기</h3>
-    <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd;">
-        <textarea id="comment-input" placeholder="댓글을 입력하세요..." style="width:100%; height:80px;"></textarea>
-        <button onclick="addComment()" style="margin-top:10px; background:#ff6b6b; color:white; border:none; padding:8px 16px; border-radius:6px;">
+                <!-- 공유 / 인쇄 -->
+                <div style="text-align:center; margin:40px 0;">
+                    <button onclick="shareLink()" style="background:#333; color:white; padding:12px 25px; border-radius:5px;">🔗 친구에게 공유하기</button>
+                    <button onclick="window.print()" style="background:white; border:1px solid #333; padding:12px 25px; border-radius:5px;">🖨️ 레시피 인쇄</button>
+                </div>
+
+                <div id="toast-msg" style="visibility:hidden; position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#333; color:white; padding:15px 20px; border-radius:20px;">
+                    주소가 복사되었습니다! 📋
+                </div>
+
+            <!-- 💬 댓글 섹션 -->
+<div class="comment-section" style="margin-top:50px;">
+
+    <h3 style="font-size:1.4rem; font-weight:700; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem;">💬</span> 댓글 남기기
+    </h3>
+
+    <!-- 댓글 작성 박스 -->
+    <div style="
+        background:#ffffff;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:20px;
+        margin-bottom:20px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    ">
+        <textarea id="comment-input"
+            placeholder="댓글을 입력하세요..."
+            style="
+                width:100%;
+                height:120px;
+                padding:12px;
+                border:1px solid #bbb;
+                border-radius:6px;
+                resize:none;
+                font-size:0.95rem;
+            "
+        ></textarea>
+
+        <button onclick="addComment()" 
+            style="
+                margin-top:12px;
+                background:#ff6b6b;
+                color:white;
+                border:none;
+                padding:10px 20px;
+                border-radius:6px;
+                cursor:pointer;
+                font-size:0.9rem;
+                font-weight:bold;
+            "
+        >
             댓글 작성
         </button>
     </div>
 
-    <div id="comment-list" style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; margin-top:15px;">
+    <!-- 작성된 댓글 표시 박스 -->
+    <div id="comment-list" style="
+        background:#fafafa;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:20px;
+        min-height:60px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    ">
         <p style="color:#888;">작성된 댓글이 없습니다.</p>
     </div>
+
 </div>
+
 
 <footer>
     <div class="container">
@@ -120,5 +207,6 @@
 
 <button id="top-btn" onclick="scrollToTop()" title="맨 위로">⬆️</button>
 <script src="script.js"></script>
+
 </body>
 </html>
